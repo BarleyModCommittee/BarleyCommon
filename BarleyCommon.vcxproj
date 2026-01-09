@@ -132,6 +132,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BarleyCommon.cpp" />
+    <ClCompile Include="index.cppm" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="include\pvzclass\pvzclass\pvzclass.vcxproj">
+      <Project>{703410a4-a7e7-4fff-a8d0-c7b8b5329575}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
