@@ -1,0 +1,14 @@
+{
+  "default-registry": {
+    "kind": "git",
+    "baseline": "af752f21c9d79ba3df9cb0250ce2233933f58486",
+    "repository": "https://gitee.com/mirrors_microsoft/vcpkg"
+  },
+  "registries": [
+    {
+      "kind": "artifact",
+      "location": "https://gitee.com/mirrors_microsoft/vcpkg-ce-catalog/repository/archive/main.zip",
+      "name": "microsoft"
+    }
+  ]
+}
