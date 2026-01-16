@@ -1,6 +1,6 @@
-export module pvz_card_converter;
+export module BarleyCommon;
 
-//export void MyFunc();
+//export void MyFunc(); 
 
 #include <vector>
 #include <string>
@@ -13,72 +13,73 @@ export module pvz_card_converter;
 #include <string_view>
 #include <algorithm>
 
-export namespace PvZConverter {
+export namespace BarleyPlantType {
 
     // 卡片编码定义
     enum class CardCode : int {
         // 基础植物
-        PEASHOOTER = 0,    // 豌豆射手
-        SUNFLOWER = 1,     // 向日葵
-        CHERRY_BOMB = 2,   // 樱桃炸弹
-        WALL_NUT = 3,      // 坚果墙
-        POTATO_MINE = 4,   // 土豆雷
-        SNOW_PEA = 5,      // 寒冰射手
-        CHOMPER = 6,       // 大嘴花
-        REPEATER = 7,      // 双发射手
-        PUFF_SHROOM = 8,   // 小喷菇
-        SUN_SHROOM = 9,    // 阳光菇
-        FUME_SHROOM = 10,  // 大喷菇
-        GRAVE_BUSTER = 11, // 墓碑吞噬者
-        HYPNOSHROOM = 12,  // 魅惑菇
-        SCAREDY_SHROOM = 13, // 胆小菇
-        ICE_SHROOM = 14,   // 寒冰菇
-        DOOM_SHROOM = 15,  // 毁灭菇
-        LILY_PAD = 16,     // 荷叶
-        SQUASH = 17,       // 窝瓜
-        THREE_PEATER = 18, // 三线射手
-        TANGLE_KELP = 19,  // 缠绕海草
-        JALAPENO = 20,     // 火爆辣椒
-        SPIKEWEED = 21,    // 地刺
-        TORCHWOOD = 22,    // 火炬树桩
-        TALL_NUT = 23,     // 高坚果
-        SEA_SHROOM = 24,   // 海蘑菇
-        PLANTERN = 25,     // 灯笼草
-        CACTUS = 26,       // 仙人掌
-        BLOVER = 27,       // 三叶草
-        SPLIT_PEA = 28,    // 裂荚射手
-        STARFRUIT = 29,    // 星星果
-        PUMPKIN = 30,      // 南瓜头
-        MAGNET_SHROOM = 31, // 磁力菇
-        CABBAGE_PULT = 32, // 卷心菜投手
-        FLOWER_POT = 33,   // 花盆
-        KERNEL_PULT = 34,  // 玉米投手
-        COFFEE_BEAN = 35,  // 咖啡豆
-        GARLIC = 36,       // 大蒜
-        UMBRELLA_LEAF = 37, // 叶子保护伞
-        MARIGOLD = 38,     // 金盏花
-        MELON_PULT = 39,   // 西瓜投手
-        GATLING_PEA = 40,  // 机枪射手
-        TWIN_SUNFLOWER = 41, // 双子向日葵
-        GLOOM_SHROOM = 42, // 忧郁菇
-        CATTAIL = 43,      // 猫尾草
-        WINTER_MELON = 44, // 冰冻西瓜
-        GOLD_MAGNET = 45,  // 吸金磁
-        SPIKEROCK = 46,    // 地刺王
-        COB_CANNON = 47,   // 玉米加农炮
-        IMITATER = 48,     // 模仿者
-        EXPLODE_O_NUT = 49, // 爆炸坚果
-        GIANT_WALLNUT = 50, // 巨型坚果墙
-        GLOOM_VINE = 51,   // 忧郁藤蔓
-        ANTI_GRAVITY = 52, // 反重力豆
-        HAY = 76,          // 干草
-        CLOVER = 77,       // 四叶草
-        STICKY_RICE = 78,  // 糯米
-        INVERSE = 79,      // 逆向草
+        Plant00 = 0,    // 豌豆射手
+        Plant01 = 1,    // 向日葵
+        Plant02 = 2,    // 樱桃炸弹
+        Plant03 = 3,    // 坚果墙
+        Plant04 = 4,    // 土豆雷
+        Plant05 = 5,    // 寒冰射手
+        Plant06 = 6,    // 大嘴花
+        Plant07 = 7,    // 双发射手
+        Plant08 = 8,    // 小喷菇
+        Plant09 = 9,    // 阳光菇
+        Plant10 = 10,   // 大喷菇
+        Plant11 = 11,   // 墓碑吞噬者
+        Plant12 = 12,   // 魅惑菇
+        Plant13 = 13,   // 胆小菇
+        Plant14 = 14,   // 寒冰菇
+        Plant15 = 15,   // 毁灭菇
+        Plant16 = 16,   // 荷叶
+        Plant17 = 17,   // 窝瓜
+        Plant18 = 18,   // 三线射手
+        Plant19 = 19,   // 缠绕海草
+        Plant20 = 20,   // 火爆辣椒
+        Plant21 = 21,   // 地刺
+        Plant22 = 22,   // 火炬树桩
+        Plant23 = 23,   // 高坚果
+        Plant24 = 24,   // 海蘑菇
+        Plant25 = 25,   // 路灯花
+        Plant26 = 26,   // 仙人掌
+        Plant27 = 27,   // 三叶草
+        Plant28 = 28,   // 裂荚射手
+        Plant29 = 29,   // 杨桃
+        Plant30 = 30,   // 南瓜头
+        Plant31 = 31,   // 磁力菇
+        Plant32 = 32,   // 卷心菜投手
+        Plant33 = 33,   // 花盆
+        Plant34 = 34,   // 玉米投手
+        Plant35 = 35,   // 咖啡豆
+        Plant36 = 36,   // 大蒜
+        Plant37 = 37,   // 叶子保护伞
+        Plant38 = 38,   // 金盏花
+        Plant39 = 39,   // 西瓜投手
+        Plant40 = 40,   // 机枪射手
+        Plant41 = 41,   // 双子向日葵
+        Plant42 = 42,   // 忧郁菇
+        Plant43 = 43,   // 猫尾草
+        Plant44 = 44,   // 冰瓜
+        Plant45 = 45,   // 吸金磁
+        Plant46 = 46,   // 地刺王
+        Plant47 = 47,   // 玉米加农炮
+        Plant48 = 48,   // 模仿者
+        Plant49 = 49,   // 爆炸坚果
+        Plant50 = 50,   // 巨大坚果
+        Plant51 = 51,   // 幼苗
+        Plant52 = 52,   // 反向双发
+        ///////////////////////////
+        Plant76 = 76,   // 春分藤
+        Plant77 = 77,   // 幽冥菇
+        Plant78 = 78,   // 奶山竹
+        Plant79 = 79,   // 逆时草
 
         // 特殊编码
-        EMPTY = -1,        // 空位
-        UNKNOWN = -2       // 未知
+        Empty = -1,        // 空位 表示该赛季不存在该植物
+        Unknown = -2       // 未知 表示可能输入错误
     };
 
     // 卡片组定义
@@ -92,7 +93,7 @@ export namespace PvZConverter {
     struct GameInput {
         int set_number;    // Sn 中的 n
         std::array<int, 5> card_codes;  // a, b, c, d, e
-        int t;             // 特殊参数
+        int t;             // 时间t 如果需要？
     };
 
     // 输出结构
@@ -112,65 +113,64 @@ export namespace PvZConverter {
 
     // 卡片编码到名称的映射
     export const std::map<CardCode, std::string> CARD_NAMES = {
-        {CardCode::PEASHOOTER, "豌豆射手"},
-        {CardCode::SUNFLOWER, "向日葵"},
-        {CardCode::CHERRY_BOMB, "樱桃炸弹"},
-        {CardCode::WALL_NUT, "坚果墙"},
-        {CardCode::POTATO_MINE, "土豆雷"},
-        {CardCode::SNOW_PEA, "寒冰射手"},
-        {CardCode::CHOMPER, "大嘴花"},
-        {CardCode::REPEATER, "双发射手"},
-        {CardCode::PUFF_SHROOM, "小喷菇"},
-        {CardCode::SUN_SHROOM, "阳光菇"},
-        {CardCode::FUME_SHROOM, "大喷菇"},
-        {CardCode::GRAVE_BUSTER, "墓碑吞噬者"},
-        {CardCode::HYPNOSHROOM, "魅惑菇"},
-        {CardCode::SCAREDY_SHROOM, "胆小菇"},
-        {CardCode::ICE_SHROOM, "寒冰菇"},
-        {CardCode::DOOM_SHROOM, "毁灭菇"},
-        {CardCode::LILY_PAD, "荷叶"},
-        {CardCode::SQUASH, "窝瓜"},
-        {CardCode::THREE_PEATER, "三线射手"},
-        {CardCode::TANGLE_KELP, "缠绕海草"},
-        {CardCode::JALAPENO, "火爆辣椒"},
-        {CardCode::SPIKEWEED, "地刺"},
-        {CardCode::TORCHWOOD, "火炬树桩"},
-        {CardCode::TALL_NUT, "高坚果"},
-        {CardCode::SEA_SHROOM, "海蘑菇"},
-        {CardCode::PLANTERN, "灯笼草"},
-        {CardCode::CACTUS, "仙人掌"},
-        {CardCode::BLOVER, "三叶草"},
-        {CardCode::SPLIT_PEA, "裂荚射手"},
-        {CardCode::STARFRUIT, "星星果"},
-        {CardCode::PUMPKIN, "南瓜头"},
-        {CardCode::MAGNET_SHROOM, "磁力菇"},
-        {CardCode::CABBAGE_PULT, "卷心菜投手"},
-        {CardCode::FLOWER_POT, "花盆"},
-        {CardCode::KERNEL_PULT, "玉米投手"},
-        {CardCode::COFFEE_BEAN, "咖啡豆"},
-        {CardCode::GARLIC, "大蒜"},
-        {CardCode::UMBRELLA_LEAF, "叶子保护伞"},
-        {CardCode::MARIGOLD, "金盏花"},
-        {CardCode::MELON_PULT, "西瓜投手"},
-        {CardCode::GATLING_PEA, "机枪射手"},
-        {CardCode::TWIN_SUNFLOWER, "双子向日葵"},
-        {CardCode::GLOOM_SHROOM, "忧郁菇"},
-        {CardCode::CATTAIL, "猫尾草"},
-        {CardCode::WINTER_MELON, "冰冻西瓜"},
-        {CardCode::GOLD_MAGNET, "吸金磁"},
-        {CardCode::SPIKEROCK, "地刺王"},
-        {CardCode::COB_CANNON, "玉米加农炮"},
-        {CardCode::IMITATER, "模仿者"},
-        {CardCode::EXPLODE_O_NUT, "爆炸坚果"},
-        {CardCode::GIANT_WALLNUT, "巨型坚果墙"},
-        {CardCode::GLOOM_VINE, "忧郁藤蔓"},
-        {CardCode::ANTI_GRAVITY, "反重力豆"},
-        {CardCode::HAY, "干草"},
-        {CardCode::CLOVER, "四叶草"},
-        {CardCode::STICKY_RICE, "糯米"},
-        {CardCode::INVERSE, "逆向草"},
-        {CardCode::EMPTY, "空"},
-        {CardCode::UNKNOWN, "未知"}
+        {CardCode::Plant00, "豌豆射手"},
+        {CardCode::Plant01, "向日葵"},
+        {CardCode::Plant02, "樱桃炸弹"},
+        {CardCode::Plant03, "坚果墙"},
+        {CardCode::Plant04, "土豆雷"},
+        {CardCode::Plant05, "寒冰射手"},
+        {CardCode::Plant06, "大嘴花"},
+        {CardCode::Plant07, "双发射手"},
+        {CardCode::Plant08, "小喷菇"},
+        {CardCode::Plant09, "阳光菇"},
+        {CardCode::Plant10, "大喷菇"},
+        {CardCode::Plant11, "墓碑吞噬者"},
+        {CardCode::Plant12, "魅惑菇"},
+        {CardCode::Plant13, "胆小菇"},
+        {CardCode::Plant14, "寒冰菇"},
+        {CardCode::Plant15, "毁灭菇"},
+        {CardCode::Plant16, "荷叶"},
+        {CardCode::Plant17, "窝瓜"},
+        {CardCode::Plant18, "三线射手"},
+        {CardCode::Plant19, "缠绕海草"},
+        {CardCode::Plant20, "火爆辣椒"},
+        {CardCode::Plant21, "地刺"},
+        {CardCode::Plant22, "火炬树桩"},
+        {CardCode::Plant23, "高坚果"},
+        {CardCode::Plant24, "海蘑菇"},
+        {CardCode::Plant25, "路灯花"},
+        {CardCode::Plant26, "仙人掌"},
+        {CardCode::Plant27, "三叶草"},
+        {CardCode::Plant28, "裂荚射手"},
+        {CardCode::Plant29, "杨桃"},
+        {CardCode::Plant30, "南瓜头"},
+        {CardCode::Plant31, "磁力菇"},
+        {CardCode::Plant32, "卷心菜投手"},
+        {CardCode::Plant33, "花盆"},
+        {CardCode::Plant35, "咖啡豆"},
+        {CardCode::Plant36, "大蒜"},
+        {CardCode::Plant37, "叶子保护伞"},
+        {CardCode::Plant38, "金盏花"},
+        {CardCode::Plant39, "西瓜投手"},
+        {CardCode::Plant40, "机枪射手"},
+        {CardCode::Plant41, "双子向日葵"},
+        {CardCode::Plant42, "忧郁菇"},
+        {CardCode::Plant43, "猫尾草"},
+        {CardCode::Plant44, "冰瓜"},
+        {CardCode::Plant45, "吸金磁"},
+        {CardCode::Plant46, "地刺王"},
+        {CardCode::Plant47, "玉米加农炮"},
+        {CardCode::Plant48, "模仿者"},
+        {CardCode::Plant49, "爆炸坚果"},
+        {CardCode::Plant50, "巨大坚果"},
+        {CardCode::Plant51, "幼苗"},
+        {CardCode::Plant52, "反向双发"},
+        {CardCode::Plant76, "春分藤"},
+        {CardCode::Plant77, "幽冥菇"},
+        {CardCode::Plant78, "奶山竹"},
+        {CardCode::Plant79, "逆时草"},
+        {CardCode::Empty,   "空"},
+        {CardCode::Unknown, "未知"}
     };
 
     // 卡片组数据库（基于题目数据）
@@ -179,7 +179,7 @@ export namespace PvZConverter {
         std::vector<CardSet> sets;
 
         // 将索引转换为实际位置（处理跳跃）
-        std::size_t index_to_position(int index) const {
+        std::size_t index_to_position(int indexBPT) const {
             static const std::array<int, 57> position_map = {
                 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
                 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37,
@@ -188,13 +188,13 @@ export namespace PvZConverter {
                 53, 54, 55, 56
             };
 
-            if (index >= 0 && index <= 52) {
-                return index;
+            if (indexBPT >= 0 && indexBPT <= 52) {
+                return indexBPT;
             }
-            else if (index >= 76 && index <= 79) {
-                return 53 + (index - 76);
+            else if (indexBPT >= 76 && indexBPT <= 79) {
+                return 53 + (indexBPT - 76);
             }
-            throw std::out_of_range(std::format("无效的卡片索引: {}", index));
+            throw std::out_of_range(std::format("无效的卡片索引: {}", indexBPT));
         }
 
     public:
@@ -203,81 +203,88 @@ export namespace PvZConverter {
         }
 
         void initialize_sets() {
-            // S0 组
+            // S0 
             sets.push_back({
                 0, "S0",
-                {"豌豆射手", "空", "空", "坚果墙", "土豆雷", "寒冰射手", "大嘴花", "双发射手",
-                 "小喷菇", "空", "大喷菇", "空", "魅惑菇", "胆小菇", "空", "空", "荷叶", "窝瓜",
-                 "三线射手", "空", "空", "地刺", "火炬树桩", "高坚果", "海蘑菇", "空", "仙人掌",
-                 "空", "裂荚射手", "星星果", "南瓜头", "磁力菇", "卷心菜投手", "花盆", "玉米投手",
-                 "空", "大蒜", "叶子保护伞", "空", "西瓜投手", "机枪射手", "空", "忧郁菇", "猫尾草",
-                 "冰冻西瓜", "空", "地刺王", "空", "空", "空", "空", "空", "空", "空", "空", "空", "空"}
+                {"豌", "空", "空", "坚", "雷", "寒", "嘴" ,"双",
+                 "小", "空", "喷", "空", "魅", "胆", "空" ,"空", 
+                 "荷", "窝", "三", "空", "空", "地", "火" ,"高", 
+                 "海", "空", "仙", "空", "裂", "星", "南+","磁", 
+                 "卷", "盆", "玉", "空", "蒜", "伞", "空" ,"瓜",
+                 "机", "空" ,"曾", "猫", "冰", "空", "刺" ,"空",
+                 "空", "空", "空", "空", "空", "空", "空" ,"空"}
                 });
 
-            // S1 组
+            // S1 
             sets.push_back({
                 1, "S1",
-                {"豌豆射手", "空", "空", "坚果墙", "土豆雷", "寒冰射手", "大嘴花", "双发射手",
-                 "小喷菇", "空", "大喷菇", "空", "魅惑菇", "胆小菇", "空", "空", "荷叶", "窝瓜",
-                 "三线射手", "空", "空", "空", "火炬树桩", "高坚果", "海蘑菇", "空", "仙人掌",
-                 "空", "裂荚射手", "星星果", "南瓜头", "磁力菇", "卷心菜投手", "花盆", "玉米投手",
-                 "空", "大蒜", "叶子保护伞", "空", "西瓜投手", "机枪射手", "空", "忧郁菇", "猫尾草",
-                 "冰冻西瓜", "空", "地刺王", "空", "空", "空", "空", "空", "空", "空", "空", "空"}
+                {"豌", "空", "空", "坚", "雷", "寒", "嘴" ,"双",
+                 "小", "空", "喷", "空", "魅", "胆", "空" ,"空",
+                 "荷", "窝", "三", "空", "空", "空", "火" ,"高",
+                 "海", "空", "仙", "空", "裂", "星", "南+","磁",
+                 "卷", "盆", "玉", "空", "蒜", "伞", "空" ,"瓜",
+                 "机", "空", "曾", "猫", "冰", "空", "刺" ,"空",
+                 "空", "空", "空", "空", "空", "空", "空" ,"空"}
                 });
 
-            // S2 组
+            // S2 
             sets.push_back({
                 2, "S2",
-                {"豌豆射手", "空", "空", "坚果墙", "空", "寒冰射手", "大嘴花", "双发射手",
-                 "空", "空", "大喷菇", "空", "魅惑菇", "胆小菇", "空", "空", "荷叶", "空",
-                 "三线射手", "空", "空", "空", "火炬树桩", "高坚果", "空", "空", "仙人掌",
-                 "空", "裂荚射手", "星星果", "南瓜头", "磁力菇", "卷心菜投手", "花盆", "玉米投手",
-                 "空", "大蒜", "叶子保护伞", "空", "西瓜投手", "机枪射手", "空", "忧郁菇", "猫尾草",
-                 "冰冻西瓜", "空", "地刺王", "空", "空", "空", "空", "空", "空", "空", "空", "空"}
+                {"豌", "空", "空", "坚", "空", "寒", "嘴" ,"双",
+                 "空", "空", "喷", "空", "魅", "胆", "空" ,"空",
+                 "荷", "空", "三", "空", "空", "空", "火" ,"高",
+                 "空", "空", "仙", "空", "裂", "星", "南+","磁",
+                 "卷", "盆", "玉", "空", "蒜", "伞", "空" ,"瓜",
+                 "机", "空", "曾", "猫", "冰", "空", "刺" ,"空",
+                 "空", "空", "空", "空", "空", "空", "空" ,"空"}
                 });
 
-            // S3 组
+            // S3 
             sets.push_back({
                 3, "S3",
-                {"豌豆射手", "机枪射手", "空", "坚果墙", "空", "寒冰射手", "大嘴花", "双发射手",
-                 "小喷菇", "空", "大喷菇", "空", "魅惑菇", "胆小菇", "空", "空", "荷叶", "空",
-                 "三线射手", "空", "空", "空", "火炬树桩", "高坚果", "海蘑菇", "空", "仙人掌",
-                 "空", "裂荚射手", "星星果", "南瓜头", "磁力菇", "卷心菜投手", "花盆", "玉米投手",
-                 "空", "大蒜", "叶子保护伞", "空", "西瓜投手", "机枪射手", "空", "忧郁菇", "猫尾草",
-                 "冰冻西瓜", "空", "地刺王", "空", "空", "空", "空", "空", "空", "空", "空", "空"}
+                {"豌", "麦", "空", "坚", "空", "寒", "嘴" ,"双",
+                 "小", "空", "喷", "空", "魅", "胆", "空" ,"空",
+                 "荷", "空", "三", "空", "空", "空", "火" ,"高",
+                 "海", "空", "仙", "空", "裂", "星", "南+","磁",
+                 "卷", "盆", "玉", "空", "蒜", "伞", "空" ,"瓜",
+                 "机", "空", "曾", "猫", "冰", "空", "刺" ,"空",
+                 "空", "空", "空", "空", "空", "空", "空" ,"空"}
                 });
 
-            // S4 组
+            // S4 
             sets.push_back({
                 4, "S4",
-                {"豌豆射手", "机枪射手", "空", "坚果墙", "空", "寒冰射手", "大嘴花", "双发射手",
-                 "小喷菇", "空", "大喷菇", "空", "魅惑菇", "胆小菇", "空", "空", "荷叶", "空",
-                 "三线射手", "空", "空", "空", "火炬树桩", "高坚果", "海蘑菇", "灯笼草", "仙人掌",
-                 "空", "裂荚射手", "星星果", "南瓜头", "磁力菇", "卷心菜投手", "花盆", "玉米投手",
-                 "空", "大蒜", "叶子保护伞", "金盏花", "西瓜投手", "机枪射手", "空", "忧郁菇", "猫尾草",
-                 "冰冻西瓜", "吸金磁", "地刺王", "空", "空", "爆炸坚果", "空", "空", "空", "空", "空", "空"}
+                {"狙", "麦", "空" ,"坚", "空", "寒", "嘴" ,"双",
+                 "小", "空", "喷" ,"空", "魅", "胆", "空" ,"空",
+                 "荷", "空", "三" ,"空", "空", "空", "火" ,"高",
+                 "海", "灯", "仙" ,"空", "裂", "星", "南+","磁",
+                 "卷", "盆", "玉" ,"空", "蒜", "伞", "金" ,"瓜",
+                 "机", "空", "曾+","猫", "冰", "吸", "刺" ,"空",
+                 "空", "爆", "空" ,"空", "空", "空", "空" ,"空"}
                 });
 
-            // S5 组
+            // S5 
             sets.push_back({
                 5, "S5",
-                {"豌豆射手", "机枪射手", "空", "坚果墙", "土豆雷", "寒冰射手", "大嘴花", "双发射手",
-                 "小喷菇", "空", "大喷菇", "空", "魅惑菇", "胆小菇", "分裂豆", "空", "荷叶", "空",
-                 "三线射手", "空", "空", "空", "火炬树桩", "高坚果", "海蘑菇", "灯笼草", "仙人掌",
-                 "三叶草", "裂荚射手", "星星果", "南瓜头", "磁力菇", "卷心菜投手", "花盆", "玉米投手",
-                 "空", "大蒜", "叶子保护伞", "金盏花", "西瓜投手", "机枪射手", "空", "忧郁菇", "猫尾草",
-                 "冰冻西瓜", "吸金磁", "地刺王", "空", "空", "爆炸坚果", "空", "空", "空", "空", "空", "空"}
+                {"狙", "麦", "空" ,"坚", "雷", "寒", "嘴" ,"双",
+                 "小", "空", "喷" ,"空", "魅", "胆", "川" ,"空",
+                 "荷", "空", "三" ,"空", "空", "空", "火" ,"高",
+                 "海", "灯", "仙" ,"叶", "裂", "星", "南+","磁",
+                 "卷", "盆", "玉" ,"空", "蒜", "伞", "金" ,"瓜",
+                 "机", "空", "曾+","猫", "冰", "吸", "刺" ,"空",
+                 "空", "爆", "空" ,"空", "空", "空", "空" ,"空"}
                 });
 
-            // S6 组
+            // S6 
             sets.push_back({
                 6, "S6",
-                {"豌豆射手", "机枪射手", "空", "坚果墙", "土豆雷", "寒冰射手", "大嘴花", "双发射手",
-                 "小喷菇", "阳光菇", "大喷菇", "空", "魅惑菇", "胆小菇", "分裂豆", "空", "水晶兰", "窝瓜",
-                 "三线射手", "缠绕海草", "空", "空", "火炬树桩", "高坚果", "海蘑菇", "灯笼草", "仙人掌",
-                 "三叶草", "裂荚射手", "星星果", "空", "磁力菇", "卷心菜投手", "空", "玉米投手",
-                 "空", "大蒜", "叶子保护伞", "金盏花", "西瓜投手", "机枪射手", "空", "忧郁菇", "猫尾草",
-                 "冰冻西瓜", "吸金磁", "地刺王", "空", "空", "爆炸坚果", "空", "忧郁藤蔓", "反重力豆", "干草", "糯米", "逆向草"}
+                {"狙", "麦", "空", "坚", "雷", "寒", "嘴", "双",
+                 "小", "阳", "喷", "空", "魅", "胆", "川", "空",
+                 "晶", "窝", "三", "草", "空", "空", "火", "高",
+                 "海", "灯", "仙", "叶", "裂", "星", "空", "磁",
+                 "卷", "空", "玉", "空", "蒜", "伞", "金", "瓜",
+                 "机", "空", "曾", "猫", "冰", "吸", "刺", "空",
+                 "空", "爆", "空", "飘", "反", "藤", "幽", "奶"}
                 });
         }
 
@@ -315,7 +322,7 @@ export namespace PvZConverter {
                     return code;
                 }
             }
-            return CardCode::UNKNOWN;
+            return CardCode::Unknown;
         }
     };
 
@@ -346,7 +353,7 @@ export namespace PvZConverter {
                 }
                 catch (const std::exception& e) {
                     output.card_names[i] = "无效卡片";
-                    output.card_codes[i] = CardCode::UNKNOWN;
+                    output.card_codes[i] = CardCode::Unknown;
                 }
             }
 
@@ -457,3 +464,44 @@ export namespace PvZConverter {
         }
     };
 }
+
+
+
+/*
+
+int main() {
+    ////////////// 创建转换器
+    PvZCardConverter converter;
+    
+    ////////////// 转换单个输入
+    std::cout << "=== 示例1: 单个转换 ===\n";
+    GameInput input1{3, {0, 1, 2, 3, 4}, 100};
+    auto output1 = converter.convert(input1);
+    std::cout << "输入: S" << input1.set_number << "组，卡片[" 
+              << input1.card_codes[0] << "," << input1.card_codes[1] << ","
+              << input1.card_codes[2] << "," << input1.card_codes[3] << ","
+              << input1.card_codes[4] << "], t=" << input1.t << "\n";
+    std::cout << "输出: " << output1.to_string() << "\n\n";
+    
+    ////////////// 批量转换
+    std::cout << "=== 示例2: 批量转换 ===\n";
+    std::vector<GameInput> batch_inputs = {
+        {0, {0, 7, 18, 22, 29}, 50},
+        {1, {3, 5, 6, 23, 30}, 75},
+        {2, {0, 4, 8, 16, 39}, 100},
+        {6, {76, 77, 78, 79, 40}, 200}
+    };
+    
+    auto batch_outputs = converter.batch_convert(batch_inputs);
+    
+    for (const auto& output : batch_outputs) {
+        std::cout << output.to_string() << "\n";
+    }
+    std::cout << "\n";
+
+
+
+    return 0;
+}
+
+*/
