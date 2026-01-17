@@ -15,95 +15,95 @@ export module BarleyCommon;
 
 export namespace BarleyPlantType {
 
-    // ¿¨Æ¬±àÂë¶¨Òå
+    // å¡ç‰‡ç¼–ç å®šä¹‰
     enum class CardCode : int {
-        // »ù´¡Ö²Îï
-        Plant00 = 0,    // Íã¶¹ÉäÊÖ
-        Plant01 = 1,    // ÏòÈÕ¿û
-        Plant02 = 2,    // Ó£ÌÒÕ¨µ¯
-        Plant03 = 3,    // ¼á¹ûÇ½
-        Plant04 = 4,    // ÍÁ¶¹À×
-        Plant05 = 5,    // º®±ùÉäÊÖ
-        Plant06 = 6,    // ´ó×ì»¨
-        Plant07 = 7,    // Ë«·¢ÉäÊÖ
-        Plant08 = 8,    // Ğ¡Åç¹½
-        Plant09 = 9,    // Ñô¹â¹½
-        Plant10 = 10,   // ´óÅç¹½
-        Plant11 = 11,   // Ä¹±®ÍÌÊÉÕß
-        Plant12 = 12,   // ÷È»ó¹½
-        Plant13 = 13,   // µ¨Ğ¡¹½
-        Plant14 = 14,   // º®±ù¹½
-        Plant15 = 15,   // »ÙÃğ¹½
-        Plant16 = 16,   // ºÉÒ¶
-        Plant17 = 17,   // ÎÑ¹Ï
-        Plant18 = 18,   // ÈıÏßÉäÊÖ
-        Plant19 = 19,   // ²øÈÆº£²İ
-        Plant20 = 20,   // »ğ±¬À±½·
-        Plant21 = 21,   // µØ´Ì
-        Plant22 = 22,   // »ğ¾æÊ÷×®
-        Plant23 = 23,   // ¸ß¼á¹û
-        Plant24 = 24,   // º£Ä¢¹½
-        Plant25 = 25,   // Â·µÆ»¨
-        Plant26 = 26,   // ÏÉÈËÕÆ
-        Plant27 = 27,   // ÈıÒ¶²İ
-        Plant28 = 28,   // ÁÑ¼ÔÉäÊÖ
-        Plant29 = 29,   // ÑîÌÒ
-        Plant30 = 30,   // ÄÏ¹ÏÍ·
-        Plant31 = 31,   // ´ÅÁ¦¹½
-        Plant32 = 32,   // ¾íĞÄ²ËÍ¶ÊÖ
-        Plant33 = 33,   // »¨Åè
-        Plant34 = 34,   // ÓñÃ×Í¶ÊÖ
-        Plant35 = 35,   // ¿§·È¶¹
-        Plant36 = 36,   // ´óËâ
-        Plant37 = 37,   // Ò¶×Ó±£»¤É¡
-        Plant38 = 38,   // ½ğÕµ»¨
-        Plant39 = 39,   // Î÷¹ÏÍ¶ÊÖ
-        Plant40 = 40,   // »úÇ¹ÉäÊÖ
-        Plant41 = 41,   // Ë«×ÓÏòÈÕ¿û
-        Plant42 = 42,   // ÓÇÓô¹½
-        Plant43 = 43,   // Ã¨Î²²İ
-        Plant44 = 44,   // ±ù¹Ï
-        Plant45 = 45,   // Îü½ğ´Å
-        Plant46 = 46,   // µØ´ÌÍõ
-        Plant47 = 47,   // ÓñÃ×¼ÓÅ©ÅÚ
-        Plant48 = 48,   // Ä£·ÂÕß
-        Plant49 = 49,   // ±¬Õ¨¼á¹û
-        Plant50 = 50,   // ¾Ş´ó¼á¹û
-        Plant51 = 51,   // Ó×Ãç
-        Plant52 = 52,   // ·´ÏòË«·¢
-        ///////////////////////////
-        Plant76 = 76,   // ´º·ÖÌÙ
-        Plant77 = 77,   // ÓÄÚ¤¹½
-        Plant78 = 78,   // ÄÌÉ½Öñ
-        Plant79 = 79,   // ÄæÊ±²İ
+        // åŸºç¡€æ¤ç‰©
+        PeaShooter        = 0,  // è±Œè±†å°„æ‰‹
+        Sunflower         = 1,  // å‘æ—¥è‘µ
+        CherryBomb        = 2,  // æ¨±æ¡ƒç‚¸å¼¹
+        WallNut           = 3,  // åšæœå¢™
+        PotatoMine        = 4,  // åœŸè±†é›·
+        SnowPea           = 5,  // å¯’å†°å°„æ‰‹
+        Chomper           = 6,  // å¤§å˜´èŠ±
+        Repeater          = 7,  // åŒå‘å°„æ‰‹
+        PuffShroom        = 8,  // å°å–·è‡
+        SunShroom         = 9,  // é˜³å…‰è‡
+        FumeShroom        = 10, // å¤§å–·è‡
+        GraveBuster       = 11, // å¢“ç¢‘åå™¬è€…
+        HypnoShroom       = 12, // é­…æƒ‘è‡
+        ScaredyShroom     = 13, // èƒ†å°è‡
+        IceShroom         = 14, // å¯’å†°è‡
+        DoomShroom        = 15, // æ¯ç­è‡
+        LilyPad           = 16, // è·å¶
+        Squash            = 17, // çªç“œ
+        Threepeater       = 18, // ä¸‰çº¿å°„æ‰‹
+        TangleKelp        = 19, // ç¼ ç»•æµ·è‰
+        Jalapeno          = 20, // ç«çˆ†è¾£æ¤’
+        Spikeweed         = 21, // åœ°åˆº
+        Torchwood         = 22, // ç«ç‚¬æ ‘æ¡©
+        TallNut           = 23, // é«˜åšæœ
+        SeaShroom         = 24, // æµ·è˜‘è‡
+        Plantern          = 25, // è·¯ç¯èŠ±
+        Cactus            = 26, // ä»™äººæŒ
+        Blover            = 27, // ä¸‰å¶è‰
+        SplitPea          = 28, // è£‚èšå°„æ‰‹
+        Starfruit         = 29, // æ¨æ¡ƒ
+        Pumpkin           = 30, // å—ç“œå¤´
+        MagnetShroom      = 31, // ç£åŠ›è‡
+        CabbagePult       = 32, // å·å¿ƒèœæŠ•æ‰‹
+        FlowerPot         = 33, // èŠ±ç›†
+        KernelPult        = 34, // ç‰ç±³æŠ•æ‰‹
+        CoffeeBean        = 35, // å’–å•¡è±†
+        Garlic            = 36, // å¤§è’œ
+        UmbrellaLeaf      = 37, // å¶å­ä¿æŠ¤ä¼
+        Marigold          = 38, // é‡‘ç›èŠ±
+        MelonPult         = 39, // è¥¿ç“œæŠ•æ‰‹
+        GatlingPea        = 40, // æœºæªå°„æ‰‹
+        TwinSunflower     = 41, // åŒå­å‘æ—¥è‘µ
+        GloomShroom       = 42, // å¿§éƒè‡
+        Cattail           = 43, // çŒ«å°¾è‰
+        WinterMelon       = 44, // å†°ç“œ
+        GoldMagnet        = 45, // å¸é‡‘ç£
+        SpikeRock         = 46, // åœ°åˆºç‹
+        CobCannon         = 47, // ç‰ç±³åŠ å†œç‚®
+        Imitater          = 48, // æ¨¡ä»¿è€…
+        Explode_O_Nut     = 49, // çˆ†ç‚¸åšæœ
+        Barley            = 50, // å·¨å¤§åšæœ
+        Endoflame         = 51, // å¹¼è‹—
+        LeftRepeater      = 52, // åå‘åŒå‘
+        /////////////////////////////////////////////////////
+        SpringEquinoxVine = 76, // æ˜¥åˆ†è—¤
+        DarkShroom        = 77, // å¹½å†¥è‡
+        Mangosteen        = 78, // å¥¶å±±ç«¹
+        ThymeWarp         = 79, // é€†æ—¶è‰
 
-        // ÌØÊâ±àÂë
-        Empty = -1,        // ¿ÕÎ» ±íÊ¾¸ÃÈü¼¾²»´æÔÚ¸ÃÖ²Îï
-        Unknown = -2       // Î´Öª ±íÊ¾¿ÉÄÜÊäÈë´íÎó
+        // ç‰¹æ®Šç¼–ç 
+        NilPlant = -1,        // ç©ºä½ è¡¨ç¤ºè¯¥èµ›å­£ä¸å­˜åœ¨è¯¥æ¤ç‰©
+        BasePlant = -2       // æœªçŸ¥ è¡¨ç¤ºå¯èƒ½è¾“å…¥é”™è¯¯
     };
 
-    // ¿¨Æ¬×é¶¨Òå
+    // å¡ç‰‡ç»„å®šä¹‰
     struct CardSet {
         int set_id;
         std::string name;
-        std::array<std::string, 57> cards;  // 57¸öÎ»ÖÃ£¨0-52, 76-79£©
+        std::array<std::string, 57> cards;  // 57ä¸ªä½ç½®ï¼ˆ0-52, 76-79ï¼‰
     };
 
-    // ÊäÈë½á¹¹
+    // è¾“å…¥ç»“æ„
     struct GameInput {
-        int set_number;    // Sn ÖĞµÄ n
+        int set_number;    // Sn ä¸­çš„ n
         std::array<int, 5> card_codes;  // a, b, c, d, e
-        int t;             // Ê±¼ät Èç¹ûĞèÒª£¿
+        int t;             // æ—¶é—´t å¦‚æœéœ€è¦ï¼Ÿ
     };
 
-    // Êä³ö½á¹¹
+    // è¾“å‡ºç»“æ„
     struct GameOutput {
         std::array<std::string, 5> card_names;
         std::array<CardCode, 5> card_codes;
         int t;
         std::string set_name;
 
-        // ¸ñÊ½»¯Êä³ö
+        // æ ¼å¼åŒ–è¾“å‡º
         std::string to_string() const {
             return std::format("({}, {}, {}, {}, {}, {}, {})",
                 card_names[0], card_names[1], card_names[2],
@@ -111,80 +111,82 @@ export namespace BarleyPlantType {
         }
     };
 
-    // ¿¨Æ¬±àÂëµ½Ãû³ÆµÄÓ³Éä
+    // å¡ç‰‡ç¼–ç åˆ°åç§°çš„æ˜ å°„
     export const std::map<CardCode, std::string> CARD_NAMES = {
-        {CardCode::Plant00, "Íã¶¹ÉäÊÖ"},
-        {CardCode::Plant01, "ÏòÈÕ¿û"},
-        {CardCode::Plant02, "Ó£ÌÒÕ¨µ¯"},
-        {CardCode::Plant03, "¼á¹ûÇ½"},
-        {CardCode::Plant04, "ÍÁ¶¹À×"},
-        {CardCode::Plant05, "º®±ùÉäÊÖ"},
-        {CardCode::Plant06, "´ó×ì»¨"},
-        {CardCode::Plant07, "Ë«·¢ÉäÊÖ"},
-        {CardCode::Plant08, "Ğ¡Åç¹½"},
-        {CardCode::Plant09, "Ñô¹â¹½"},
-        {CardCode::Plant10, "´óÅç¹½"},
-        {CardCode::Plant11, "Ä¹±®ÍÌÊÉÕß"},
-        {CardCode::Plant12, "÷È»ó¹½"},
-        {CardCode::Plant13, "µ¨Ğ¡¹½"},
-        {CardCode::Plant14, "º®±ù¹½"},
-        {CardCode::Plant15, "»ÙÃğ¹½"},
-        {CardCode::Plant16, "ºÉÒ¶"},
-        {CardCode::Plant17, "ÎÑ¹Ï"},
-        {CardCode::Plant18, "ÈıÏßÉäÊÖ"},
-        {CardCode::Plant19, "²øÈÆº£²İ"},
-        {CardCode::Plant20, "»ğ±¬À±½·"},
-        {CardCode::Plant21, "µØ´Ì"},
-        {CardCode::Plant22, "»ğ¾æÊ÷×®"},
-        {CardCode::Plant23, "¸ß¼á¹û"},
-        {CardCode::Plant24, "º£Ä¢¹½"},
-        {CardCode::Plant25, "Â·µÆ»¨"},
-        {CardCode::Plant26, "ÏÉÈËÕÆ"},
-        {CardCode::Plant27, "ÈıÒ¶²İ"},
-        {CardCode::Plant28, "ÁÑ¼ÔÉäÊÖ"},
-        {CardCode::Plant29, "ÑîÌÒ"},
-        {CardCode::Plant30, "ÄÏ¹ÏÍ·"},
-        {CardCode::Plant31, "´ÅÁ¦¹½"},
-        {CardCode::Plant32, "¾íĞÄ²ËÍ¶ÊÖ"},
-        {CardCode::Plant33, "»¨Åè"},
-        {CardCode::Plant35, "¿§·È¶¹"},
-        {CardCode::Plant36, "´óËâ"},
-        {CardCode::Plant37, "Ò¶×Ó±£»¤É¡"},
-        {CardCode::Plant38, "½ğÕµ»¨"},
-        {CardCode::Plant39, "Î÷¹ÏÍ¶ÊÖ"},
-        {CardCode::Plant40, "»úÇ¹ÉäÊÖ"},
-        {CardCode::Plant41, "Ë«×ÓÏòÈÕ¿û"},
-        {CardCode::Plant42, "ÓÇÓô¹½"},
-        {CardCode::Plant43, "Ã¨Î²²İ"},
-        {CardCode::Plant44, "±ù¹Ï"},
-        {CardCode::Plant45, "Îü½ğ´Å"},
-        {CardCode::Plant46, "µØ´ÌÍõ"},
-        {CardCode::Plant47, "ÓñÃ×¼ÓÅ©ÅÚ"},
-        {CardCode::Plant48, "Ä£·ÂÕß"},
-        {CardCode::Plant49, "±¬Õ¨¼á¹û"},
-        {CardCode::Plant50, "¾Ş´ó¼á¹û"},
-        {CardCode::Plant51, "Ó×Ãç"},
-        {CardCode::Plant52, "·´ÏòË«·¢"},
-        {CardCode::Plant76, "´º·ÖÌÙ"},
-        {CardCode::Plant77, "ÓÄÚ¤¹½"},
-        {CardCode::Plant78, "ÄÌÉ½Öñ"},
-        {CardCode::Plant79, "ÄæÊ±²İ"},
-        {CardCode::Empty,   "¿Õ"},
-        {CardCode::Unknown, "Î´Öª"}
+        {CardCode::PeaShooter,       "è±Œè±†å°„æ‰‹"},
+        {CardCode::Sunflower,        "å‘æ—¥è‘µ"},
+        {CardCode::CherryBomb,       "æ¨±æ¡ƒç‚¸å¼¹"},
+        {CardCode::WallNut,          "åšæœå¢™"},
+        {CardCode::PotatoMine,       "åœŸè±†é›·"},
+        {CardCode::SnowPea,          "å¯’å†°å°„æ‰‹"},
+        {CardCode::Chomper,          "å¤§å˜´èŠ±"},
+        {CardCode::Repeater,         "åŒå‘å°„æ‰‹"},
+        {CardCode::PuffShroom,       "å°å–·è‡"},
+        {CardCode::SunShroom,        "é˜³å…‰è‡"},
+        {CardCode::FumeShroom,       "å¤§å–·è‡"},
+        {CardCode::GraveBuster,      "å¢“ç¢‘åå™¬è€…"},
+        {CardCode::HypnoShroom,      "é­…æƒ‘è‡"},
+        {CardCode::ScaredyShroom,    "èƒ†å°è‡"},
+        {CardCode::IceShroom,        "å¯’å†°è‡"},
+        {CardCode::DoomShroom,       "æ¯ç­è‡"},
+        {CardCode::LilyPad,          "è·å¶"},
+        {CardCode::Squash,           "çªç“œ"},
+        {CardCode::Threepeater,      "ä¸‰çº¿å°„æ‰‹"},
+        {CardCode::TangleKelp,       "ç¼ ç»•æµ·è‰"},
+        {CardCode::Jalapeno,         "ç«çˆ†è¾£æ¤’"},
+        {CardCode::Spikeweed,        "åœ°åˆº"},
+        {CardCode::Torchwood,        "ç«ç‚¬æ ‘æ¡©"},
+        {CardCode::TallNut,          "é«˜åšæœ"},
+        {CardCode::SeaShroom,        "æµ·è˜‘è‡"},
+        {CardCode::Plantern,         "è·¯ç¯èŠ±"},
+        {CardCode::Cactus,           "ä»™äººæŒ"},
+        {CardCode::Blover,           "ä¸‰å¶è‰"},
+        {CardCode::SplitPea,         "è£‚èšå°„æ‰‹"},
+        {CardCode::Starfruit,        "æ¨æ¡ƒ"},
+        {CardCode::Pumpkin,          "å—ç“œå¤´"},
+        {CardCode::MagnetShroom,     "ç£åŠ›è‡"},
+        {CardCode::CabbagePult,      "å·å¿ƒèœæŠ•æ‰‹"},
+        {CardCode::FlowerPot,        "èŠ±ç›†"},
+        {CardCode::KernelPult,       "ç‰ç±³æŠ•æ‰‹"},
+        {CardCode::CoffeeBean,       "å’–å•¡è±†"},
+        {CardCode::Garlic,           "å¤§è’œ"},
+        {CardCode::UmbrellaLeaf,     "å¶å­ä¿æŠ¤ä¼"},
+        {CardCode::Marigold,         "é‡‘ç›èŠ±"},
+        {CardCode::MelonPult,        "è¥¿ç“œæŠ•æ‰‹"},
+        {CardCode::GatlingPea,       "æœºæªå°„æ‰‹"},
+        {CardCode::TwinSunflower,    "åŒå­å‘æ—¥è‘µ"},
+        {CardCode::GloomShroom,      "å¿§éƒè‡"},
+        {CardCode::Cattail,          "çŒ«å°¾è‰"},
+        {CardCode::WinterMelon,      "å†°ç“œ"},
+        {CardCode::GoldMagnet,       "å¸é‡‘ç£"},
+        {CardCode::SpikeRock,        "åœ°åˆºç‹"},
+        {CardCode::CobCannon,        "ç‰ç±³åŠ å†œç‚®"},
+        {CardCode::Imitater,         "æ¨¡ä»¿è€…"},
+        {CardCode::Explode_O_Nut,    "çˆ†ç‚¸åšæœ"},
+        {CardCode::SpikeRock,        "åœ°åˆºç‹"},
+        {CardCode::Barley,           "å·¨å¤§åšæœ"},
+        {CardCode::Endoflame,        "å¹¼è‹—"},
+        {CardCode::LeftRepeater,     "åå‘åŒå‘"},
+        {CardCode::SpringEquinoxVine,"æ˜¥åˆ†è—¤"},
+        {CardCode::DarkShroom,       "å¹½å†¥è‡"},
+        {CardCode::Mangosteen,       "å¥¶å±±ç«¹"},
+        {CardCode::ThymeWarp,        "é€†æ—¶è‰"},
+        {CardCode::NilPlant,         "ç©º"},
+        {CardCode::BasePlant,        "æœªçŸ¥"}
     };
 
-    // ¿¨Æ¬×éÊı¾İ¿â£¨»ùÓÚÌâÄ¿Êı¾İ£©
+    // å¡ç‰‡ç»„æ•°æ®åº“ï¼ˆåŸºäºé¢˜ç›®æ•°æ®ï¼‰
     export class CardSetDatabase {
     private:
         std::vector<CardSet> sets;
 
-        // ½«Ë÷Òı×ª»»ÎªÊµ¼ÊÎ»ÖÃ£¨´¦ÀíÌøÔ¾£©
+        // å°†ç´¢å¼•è½¬æ¢ä¸ºå®é™…ä½ç½®ï¼ˆå¤„ç†è·³è·ƒï¼‰
         std::size_t index_to_position(int indexBPT) const {
             static const std::array<int, 57> position_map = {
                 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
                 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37,
                 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52,
-                // ÌøÔ¾µ½ 76-79
+                // è·³è·ƒåˆ° 76-79
                 53, 54, 55, 56
             };
 
@@ -194,7 +196,7 @@ export namespace BarleyPlantType {
             else if (indexBPT >= 76 && indexBPT <= 79) {
                 return 53 + (indexBPT - 76);
             }
-            throw std::out_of_range(std::format("ÎŞĞ§µÄ¿¨Æ¬Ë÷Òı: {}", indexBPT));
+            throw std::out_of_range(std::format("æ— æ•ˆçš„å¡ç‰‡ç´¢å¼•: {}", indexBPT));
         }
 
     public:
@@ -206,116 +208,136 @@ export namespace BarleyPlantType {
             // S0 
             sets.push_back({
                 0, "S0",
-                {"Íã", "¿Õ", "¿Õ", "¼á", "À×", "º®", "×ì" ,"Ë«",
-                 "Ğ¡", "¿Õ", "Åç", "¿Õ", "÷È", "µ¨", "¿Õ" ,"¿Õ", 
-                 "ºÉ", "ÎÑ", "Èı", "¿Õ", "¿Õ", "µØ", "»ğ" ,"¸ß", 
-                 "º£", "¿Õ", "ÏÉ", "¿Õ", "ÁÑ", "ĞÇ", "ÄÏ+","´Å", 
-                 "¾í", "Åè", "Óñ", "¿Õ", "Ëâ", "É¡", "¿Õ" ,"¹Ï",
-                 "»ú", "¿Õ" ,"Ôø", "Ã¨", "±ù", "¿Õ", "´Ì" ,"¿Õ",
-                 "¿Õ", "¿Õ", "¿Õ", "¿Õ", "¿Õ", "¿Õ", "¿Õ" ,"¿Õ"}
+                {"è±Œ", "ç©º", "ç©º", "åš", "é›·", "å¯’", "å˜´" ,"åŒ",
+                 "å°", "ç©º", "å–·", "ç©º", "é­…", "èƒ†", "ç©º" ,"ç©º", 
+                 "è·", "çª", "ä¸‰", "ç©º", "ç©º", "åœ°", "ç«" ,"é«˜", 
+                 "æµ·", "ç©º", "ä»™", "ç©º", "è£‚", "æ˜Ÿ", "å—+","ç£", 
+                 "å·", "ç›†", "ç‰", "ç©º", "è’œ", "ä¼", "ç©º" ,"ç“œ",
+                 "æœº", "ç©º" ,"æ›¾", "çŒ«", "å†°", "ç©º", "åˆº" ,"ç©º",
+                 "ç©º", "ç©º", "ç©º", "ç©º", "ç©º", "ç©º", "ç©º" ,"ç©º",
+                 "ç©º"}
                 });
 
             // S1 
             sets.push_back({
                 1, "S1",
-                {"Íã", "¿Õ", "¿Õ", "¼á", "À×", "º®", "×ì" ,"Ë«",
-                 "Ğ¡", "¿Õ", "Åç", "¿Õ", "÷È", "µ¨", "¿Õ" ,"¿Õ",
-                 "ºÉ", "ÎÑ", "Èı", "¿Õ", "¿Õ", "¿Õ", "»ğ" ,"¸ß",
-                 "º£", "¿Õ", "ÏÉ", "¿Õ", "ÁÑ", "ĞÇ", "ÄÏ+","´Å",
-                 "¾í", "Åè", "Óñ", "¿Õ", "Ëâ", "É¡", "¿Õ" ,"¹Ï",
-                 "»ú", "¿Õ", "Ôø", "Ã¨", "±ù", "¿Õ", "´Ì" ,"¿Õ",
-                 "¿Õ", "¿Õ", "¿Õ", "¿Õ", "¿Õ", "¿Õ", "¿Õ" ,"¿Õ"}
+                {"è±Œ", "ç©º", "ç©º", "åš", "é›·", "å¯’", "å˜´" ,"åŒ",
+                 "å°", "ç©º", "å–·", "ç©º", "é­…", "èƒ†", "ç©º" ,"ç©º",
+                 "è·", "çª", "ä¸‰", "ç©º", "ç©º", "ç©º", "ç«" ,"é«˜",
+                 "æµ·", "ç©º", "ä»™", "ç©º", "è£‚", "æ˜Ÿ", "å—+","ç£",
+                 "å·", "ç›†", "ç‰", "ç©º", "è’œ", "ä¼", "ç©º" ,"ç“œ",
+                 "æœº", "ç©º", "æ›¾", "çŒ«", "å†°", "ç©º", "åˆº" ,"ç©º",
+                 "ç©º", "ç©º", "ç©º", "ç©º", "ç©º", "ç©º", "ç©º" ,"ç©º",
+                 "ç©º"}
                 });
 
             // S2 
             sets.push_back({
                 2, "S2",
-                {"Íã", "¿Õ", "¿Õ", "¼á", "¿Õ", "º®", "×ì" ,"Ë«",
-                 "¿Õ", "¿Õ", "Åç", "¿Õ", "÷È", "µ¨", "¿Õ" ,"¿Õ",
-                 "ºÉ", "¿Õ", "Èı", "¿Õ", "¿Õ", "¿Õ", "»ğ" ,"¸ß",
-                 "¿Õ", "¿Õ", "ÏÉ", "¿Õ", "ÁÑ", "ĞÇ", "ÄÏ+","´Å",
-                 "¾í", "Åè", "Óñ", "¿Õ", "Ëâ", "É¡", "¿Õ" ,"¹Ï",
-                 "»ú", "¿Õ", "Ôø", "Ã¨", "±ù", "¿Õ", "´Ì" ,"¿Õ",
-                 "¿Õ", "¿Õ", "¿Õ", "¿Õ", "¿Õ", "¿Õ", "¿Õ" ,"¿Õ"}
+                {"è±Œ", "ç©º", "ç©º", "åš", "ç©º", "å¯’", "å˜´" ,"åŒ",
+                 "ç©º", "ç©º", "å–·", "ç©º", "é­…", "èƒ†", "ç©º" ,"ç©º",
+                 "è·", "ç©º", "ä¸‰", "ç©º", "ç©º", "ç©º", "ç«" ,"é«˜",
+                 "ç©º", "ç©º", "ä»™", "ç©º", "è£‚", "æ˜Ÿ", "å—+","ç£",
+                 "å·", "ç›†", "ç‰", "ç©º", "è’œ", "ä¼", "ç©º" ,"ç“œ",
+                 "æœº", "ç©º", "æ›¾", "çŒ«", "å†°", "ç©º", "åˆº" ,"ç©º",
+                 "ç©º", "ç©º", "ç©º", "ç©º", "ç©º", "ç©º", "ç©º" ,"ç©º",
+                 "ç©º"}
                 });
 
             // S3 
             sets.push_back({
                 3, "S3",
-                {"Íã", "Âó", "¿Õ", "¼á", "¿Õ", "º®", "×ì" ,"Ë«",
-                 "Ğ¡", "¿Õ", "Åç", "¿Õ", "÷È", "µ¨", "¿Õ" ,"¿Õ",
-                 "ºÉ", "¿Õ", "Èı", "¿Õ", "¿Õ", "¿Õ", "»ğ" ,"¸ß",
-                 "º£", "¿Õ", "ÏÉ", "¿Õ", "ÁÑ", "ĞÇ", "ÄÏ+","´Å",
-                 "¾í", "Åè", "Óñ", "¿Õ", "Ëâ", "É¡", "¿Õ" ,"¹Ï",
-                 "»ú", "¿Õ", "Ôø", "Ã¨", "±ù", "¿Õ", "´Ì" ,"¿Õ",
-                 "¿Õ", "¿Õ", "¿Õ", "¿Õ", "¿Õ", "¿Õ", "¿Õ" ,"¿Õ"}
+                {"è±Œ", "éº¦", "ç©º", "åš", "ç©º", "å¯’", "å˜´" ,"åŒ",
+                 "å°", "ç©º", "å–·", "ç©º", "é­…", "èƒ†", "ç©º" ,"ç©º",
+                 "è·", "ç©º", "ä¸‰", "ç©º", "ç©º", "ç©º", "ç«" ,"é«˜",
+                 "æµ·", "ç©º", "ä»™", "ç©º", "è£‚", "æ˜Ÿ", "å—+","ç£",
+                 "å·", "ç›†", "ç‰", "ç©º", "è’œ", "ä¼", "ç©º" ,"ç“œ",
+                 "æœº", "ç©º", "æ›¾", "çŒ«", "å†°", "ç©º", "åˆº" ,"ç©º",
+                 "ç©º", "ç©º", "ç©º", "ç©º", "ç©º", "ç©º", "ç©º" ,"ç©º",
+                 "ç©º"}
                 });
 
             // S4 
             sets.push_back({
                 4, "S4",
-                {"¾Ñ", "Âó", "¿Õ" ,"¼á", "¿Õ", "º®", "×ì" ,"Ë«",
-                 "Ğ¡", "¿Õ", "Åç" ,"¿Õ", "÷È", "µ¨", "¿Õ" ,"¿Õ",
-                 "ºÉ", "¿Õ", "Èı" ,"¿Õ", "¿Õ", "¿Õ", "»ğ" ,"¸ß",
-                 "º£", "µÆ", "ÏÉ" ,"¿Õ", "ÁÑ", "ĞÇ", "ÄÏ+","´Å",
-                 "¾í", "Åè", "Óñ" ,"¿Õ", "Ëâ", "É¡", "½ğ" ,"¹Ï",
-                 "»ú", "¿Õ", "Ôø+","Ã¨", "±ù", "Îü", "´Ì" ,"¿Õ",
-                 "¿Õ", "±¬", "¿Õ" ,"¿Õ", "¿Õ", "¿Õ", "¿Õ" ,"¿Õ"}
+                {"ç‹™", "éº¦", "ç©º" ,"åš", "ç©º", "å¯’", "å˜´" ,"åŒ",
+                 "å°", "ç©º", "å–·" ,"ç©º", "é­…", "èƒ†", "ç©º" ,"ç©º",
+                 "è·", "ç©º", "ä¸‰" ,"ç©º", "ç©º", "ç©º", "ç«" ,"é«˜",
+                 "æµ·", "ç¯", "ä»™" ,"ç©º", "è£‚", "æ˜Ÿ", "å—+","ç£",
+                 "å·", "ç›†", "ç‰" ,"ç©º", "è’œ", "ä¼", "é‡‘" ,"ç“œ",
+                 "æœº", "ç©º", "æ›¾+","çŒ«", "å†°", "å¸", "åˆº" ,"ç©º",
+                 "ç©º", "çˆ†", "ç©º" ,"ç©º", "ç©º", "ç©º", "ç©º" ,"ç©º",
+                 "ç©º"}
                 });
 
             // S5 
             sets.push_back({
                 5, "S5",
-                {"¾Ñ", "Âó", "¿Õ" ,"¼á", "À×", "º®", "×ì" ,"Ë«",
-                 "Ğ¡", "¿Õ", "Åç" ,"¿Õ", "÷È", "µ¨", "´¨" ,"¿Õ",
-                 "ºÉ", "¿Õ", "Èı" ,"¿Õ", "¿Õ", "¿Õ", "»ğ" ,"¸ß",
-                 "º£", "µÆ", "ÏÉ" ,"Ò¶", "ÁÑ", "ĞÇ", "ÄÏ+","´Å",
-                 "¾í", "Åè", "Óñ" ,"¿Õ", "Ëâ", "É¡", "½ğ" ,"¹Ï",
-                 "»ú", "¿Õ", "Ôø+","Ã¨", "±ù", "Îü", "´Ì" ,"¿Õ",
-                 "¿Õ", "±¬", "¿Õ" ,"¿Õ", "¿Õ", "¿Õ", "¿Õ" ,"¿Õ"}
+                {"ç‹™", "éº¦", "ç©º" ,"åš", "é›·", "å¯’", "å˜´" ,"åŒ",
+                 "å°", "ç©º", "å–·" ,"ç©º", "é­…", "èƒ†", "å·" ,"ç©º",
+                 "è·", "ç©º", "ä¸‰" ,"ç©º", "ç©º", "ç©º", "ç«" ,"é«˜",
+                 "æµ·", "ç¯", "ä»™" ,"å¶", "è£‚", "æ˜Ÿ", "å—+","ç£",
+                 "å·", "ç›†", "ç‰" ,"ç©º", "è’œ", "ä¼", "é‡‘" ,"ç“œ",
+                 "æœº", "ç©º", "æ›¾+","çŒ«", "å†°", "å¸", "åˆº" ,"ç©º",
+                 "ç©º", "çˆ†", "ç©º" ,"ç©º", "ç©º", "ç©º", "ç©º" ,"ç©º",
+                 "ç©º"}
                 });
 
             // S6 
             sets.push_back({
                 6, "S6",
-                {"¾Ñ", "Âó", "¿Õ", "¼á", "À×", "º®", "×ì", "Ë«",
-                 "Ğ¡", "Ñô", "Åç", "¿Õ", "÷È", "µ¨", "´¨", "¿Õ",
-                 "¾§", "ÎÑ", "Èı", "²İ", "¿Õ", "¿Õ", "»ğ", "¸ß",
-                 "º£", "µÆ", "ÏÉ", "Ò¶", "ÁÑ", "ĞÇ", "¿Õ", "´Å",
-                 "¾í", "¿Õ", "Óñ", "¿Õ", "Ëâ", "É¡", "½ğ", "¹Ï",
-                 "»ú", "¿Õ", "Ôø", "Ã¨", "±ù", "Îü", "´Ì", "¿Õ",
-                 "¿Õ", "±¬", "¿Õ", "Æ®", "·´", "ÌÙ", "ÓÄ", "ÄÌ"}
+                {"ç‹™", "éº¦", "ç©º", "åš", "é›·", "å¯’", "å˜´", "åŒ",
+                 "å°", "é˜³", "å–·", "ç©º", "é­…", "èƒ†", "å·", "ç©º",
+                 "æ™¶", "çª", "ä¸‰", "è‰", "ç©º", "ç©º", "ç«", "é«˜",
+                 "æµ·", "ç¯", "ä»™", "å¶", "è£‚", "æ˜Ÿ", "ç©º", "ç£",
+                 "å·", "ç©º", "ç‰", "ç©º", "è’œ", "ä¼", "é‡‘", "ç“œ",
+                 "æœº", "ç©º", "æ›¾", "çŒ«", "å†°", "å¸", "åˆº", "ç©º",
+                 "ç©º", "çˆ†", "ç©º", "é£˜", "å", "è—¤", "å¹½", "å¥¶",
+                 "é€†"}
+                });
+
+            // S7
+            sets.push_back({
+                7, "S7",
+                {"ç‹™", "ç©º", "ç©º", "åš", "é›·", "å¯’", "å˜´", "åŒ",
+                 "å°", "é˜³", "å–·", "ç©º", "é­…", "èƒ†", "å·", "ç©º",
+                 "ç©º", "çª", "ä¸‰", "è‰", "ç©º", "ç©º", "ç«", "é«˜",
+                 "æµ·", "ç¯", "ä»™", "å¶", "è£‚", "æ˜Ÿ", "ç©º", "ç£",
+                 "å·", "ç©º", "ç‰", "ç©º", "è’œ", "ä¼", "é‡‘", "ç“œ",
+                 "æœº", "ç©º", "æ›¾", "çŒ«", "å†°", "å¸", "åˆº", "ç©º",
+                 "ç©º", "çˆ†", "éº¦", "é£˜", "å", "è—¤", "å¹½", "å¥¶",
+                 "é€†", "BasePlant", "BasePlant"} //(ï¼Ÿ
                 });
         }
 
-        // »ñÈ¡Ö¸¶¨×éµÄ¿¨Æ¬Ãû³Æ
+        // è·å–æŒ‡å®šç»„çš„å¡ç‰‡åç§°
         std::string get_card_name(int set_id, int card_index) const {
             if (set_id < 0 || set_id >= static_cast<int>(sets.size())) {
-                throw std::out_of_range(std::format("ÎŞĞ§µÄ×éID: {}", set_id));
+                throw std::out_of_range(std::format("æ— æ•ˆçš„ç»„ID: {}", set_id));
             }
 
             auto pos = index_to_position(card_index);
             if (pos >= sets[set_id].cards.size()) {
-                throw std::out_of_range(std::format("¿¨Æ¬Ë÷Òı³¬³ö·¶Î§: {}", card_index));
+                throw std::out_of_range(std::format("å¡ç‰‡ç´¢å¼•è¶…å‡ºèŒƒå›´: {}", card_index));
             }
 
             return sets[set_id].cards[pos];
         }
 
-        // »ñÈ¡¿¨Æ¬×éĞÅÏ¢
+        // è·å–å¡ç‰‡ç»„ä¿¡æ¯
         const CardSet& get_card_set(int set_id) const {
             if (set_id < 0 || set_id >= static_cast<int>(sets.size())) {
-                throw std::out_of_range(std::format("ÎŞĞ§µÄ×éID: {}", set_id));
+                throw std::out_of_range(std::format("æ— æ•ˆçš„ç»„ID: {}", set_id));
             }
             return sets[set_id];
         }
 
-        // »ñÈ¡ËùÓĞ×éĞÅÏ¢
+        // è·å–æ‰€æœ‰ç»„ä¿¡æ¯
         std::vector<CardSet> get_all_sets() const {
             return sets;
         }
 
-        // ¸ù¾İÃû³Æ²éÕÒ¿¨Æ¬±àÂë
+        // æ ¹æ®åç§°æŸ¥æ‰¾å¡ç‰‡ç¼–ç 
         CardCode find_card_code(const std::string& name) const {
             for (const auto& [code, card_name] : CARD_NAMES) {
                 if (card_name == name) {
@@ -326,7 +348,7 @@ export namespace BarleyPlantType {
         }
     };
 
-    // Ö÷×ª»»Æ÷Àà
+    // ä¸»è½¬æ¢å™¨ç±»
     export class PvZCardConverter {
     private:
         CardSetDatabase database;
@@ -334,13 +356,13 @@ export namespace BarleyPlantType {
     public:
         PvZCardConverter() = default;
 
-        // ºËĞÄ×ª»»º¯Êı
+        // æ ¸å¿ƒè½¬æ¢å‡½æ•°
         GameOutput convert(const GameInput& input) const {
             GameOutput output;
             output.set_name = database.get_card_set(input.set_number).name;
             output.t = input.t;
 
-            // ×ª»»Ã¿¸ö¿¨Æ¬±àÂë
+            // è½¬æ¢æ¯ä¸ªå¡ç‰‡ç¼–ç 
             for (size_t i = 0; i < input.card_codes.size(); ++i) {
                 try {
                     std::string card_name = database.get_card_name(
@@ -352,7 +374,7 @@ export namespace BarleyPlantType {
                     output.card_codes[i] = database.find_card_code(card_name);
                 }
                 catch (const std::exception& e) {
-                    output.card_names[i] = "ÎŞĞ§¿¨Æ¬";
+                    output.card_names[i] = "æ— æ•ˆå¡ç‰‡";
                     output.card_codes[i] = CardCode::Unknown;
                 }
             }
@@ -360,7 +382,7 @@ export namespace BarleyPlantType {
             return output;
         }
 
-        // ÅúÁ¿×ª»»
+        // æ‰¹é‡è½¬æ¢
         std::vector<GameOutput> batch_convert(
             const std::vector<GameInput>& inputs
         ) const {
@@ -374,18 +396,18 @@ export namespace BarleyPlantType {
             return results;
         }
 
-        // ÏÔÊ¾¿¨Æ¬×éĞÅÏ¢
+        // æ˜¾ç¤ºå¡ç‰‡ç»„ä¿¡æ¯
         std::string display_card_set(int set_id) const {
             const auto& card_set = database.get_card_set(set_id);
             std::string result = std::format("{}:\n", card_set.name);
 
-            // ÏÔÊ¾ËùÓĞ¿¨Æ¬
+            // æ˜¾ç¤ºæ‰€æœ‰å¡ç‰‡
             for (int i = 0; i <= 52; ++i) {
                 result += std::format("#{}: {}\n", i,
                     database.get_card_name(set_id, i));
             }
 
-            // ÏÔÊ¾ÌØÊâ¿¨Æ¬ (76-79)
+            // æ˜¾ç¤ºç‰¹æ®Šå¡ç‰‡ (76-79)
             for (int i = 76; i <= 79; ++i) {
                 result += std::format("#{}: {}\n", i,
                     database.get_card_name(set_id, i));
@@ -394,7 +416,7 @@ export namespace BarleyPlantType {
             return result;
         }
 
-        // ÑéÖ¤ÊäÈëÓĞĞ§ĞÔ
+        // éªŒè¯è¾“å…¥æœ‰æ•ˆæ€§
         bool validate_input(const GameInput& input) const {
             if (input.set_number < 0 || input.set_number > 6) {
                 return false;
@@ -410,7 +432,7 @@ export namespace BarleyPlantType {
         }
     };
 
-    // ±ã½İº¯Êı
+    // ä¾¿æ·å‡½æ•°
     export GameOutput convert_cards(
         int set_number,
         int a, int b, int c, int d, int e,
@@ -426,11 +448,11 @@ export namespace BarleyPlantType {
         return converter.convert(input);
     }
 
-    // ÊäÈë½âÎöÆ÷
+    // è¾“å…¥è§£æå™¨
     export class InputParser {
     public:
         static GameInput parse_string(const std::string& input_str) {
-            // ¸ñÊ½: "n,a,b,c,d,e,t"
+            // æ ¼å¼: "n,a,b,c,d,e,t"
             std::vector<int> values;
             std::string token;
 
@@ -452,7 +474,7 @@ export namespace BarleyPlantType {
 
             if (values.size() != 7) {
                 throw std::invalid_argument(
-                    std::format("ÊäÈëĞèÒª7¸ö²ÎÊı£¬µÃµ½{}¸ö", values.size())
+                    std::format("è¾“å…¥éœ€è¦7ä¸ªå‚æ•°ï¼Œå¾—åˆ°{}ä¸ª", values.size())
                 );
             }
 
@@ -470,21 +492,21 @@ export namespace BarleyPlantType {
 /*
 
 int main() {
-    ////////////// ´´½¨×ª»»Æ÷
+    ////////////// åˆ›å»ºè½¬æ¢å™¨
     PvZCardConverter converter;
     
-    ////////////// ×ª»»µ¥¸öÊäÈë
-    std::cout << "=== Ê¾Àı1: µ¥¸ö×ª»» ===\n";
+    ////////////// è½¬æ¢å•ä¸ªè¾“å…¥
+    std::cout << "=== ç¤ºä¾‹1: å•ä¸ªè½¬æ¢ ===\n";
     GameInput input1{3, {0, 1, 2, 3, 4}, 100};
     auto output1 = converter.convert(input1);
-    std::cout << "ÊäÈë: S" << input1.set_number << "×é£¬¿¨Æ¬[" 
+    std::cout << "è¾“å…¥: S" << input1.set_number << "ç»„ï¼Œå¡ç‰‡[" 
               << input1.card_codes[0] << "," << input1.card_codes[1] << ","
               << input1.card_codes[2] << "," << input1.card_codes[3] << ","
               << input1.card_codes[4] << "], t=" << input1.t << "\n";
-    std::cout << "Êä³ö: " << output1.to_string() << "\n\n";
+    std::cout << "è¾“å‡º: " << output1.to_string() << "\n\n";
     
-    ////////////// ÅúÁ¿×ª»»
-    std::cout << "=== Ê¾Àı2: ÅúÁ¿×ª»» ===\n";
+    ////////////// æ‰¹é‡è½¬æ¢
+    std::cout << "=== ç¤ºä¾‹2: æ‰¹é‡è½¬æ¢ ===\n";
     std::vector<GameInput> batch_inputs = {
         {0, {0, 7, 18, 22, 29}, 50},
         {1, {3, 5, 6, 23, 30}, 75},
