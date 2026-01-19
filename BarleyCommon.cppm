@@ -71,6 +71,8 @@ export namespace BarleyPlantType {
         Barley            = 50, // 巨大坚果
         Endoflame         = 51, // 幼苗
         LeftRepeater      = 52, // 反向双发
+		SniperShooter     = 53, // 狙击豌豆
+		DiamondShroom     = 54, // 晶钻菇
         /////////////////////////////////////////////////////
         SpringEquinoxVine = 76, // 春分藤
         DarkShroom        = 77, // 幽冥菇
