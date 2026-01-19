@@ -132,6 +132,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BarleyCommon.cpp" />
+    <ClCompile Include="BarleyCommon.cppm" />
     <ClCompile Include="index.cppm" />
   </ItemGroup>
   <ItemGroup>
