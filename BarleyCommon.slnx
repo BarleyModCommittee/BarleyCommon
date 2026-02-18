@@ -4,6 +4,7 @@
     <Platform Name="x86" />
   </Configurations>
   <Folder Name="/解决方案项/">
+    <File Path=".clang-format" />
     <File Path=".editorconfig" />
   </Folder>
   <Project Path="BarleyCommon.vcxproj" Id="4f1377c1-effc-44ef-9360-08bc4637a259" />

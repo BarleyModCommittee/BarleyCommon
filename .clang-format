@@ -1,0 +1,11 @@
+Language: Cpp
+
+BreakBeforeBraces: Allman
+
+UseTab: Always
+IndentWidth: 4
+TabWidth: 4
+ContinuationIndentWidth: 4
+NamespaceIndentation: All
+
+MaxEmptyLinesToKeep: 1
