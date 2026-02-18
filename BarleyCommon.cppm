@@ -13,76 +13,117 @@ export module BarleyCommon;
 #include <string_view>
 #include <algorithm>
 
-export namespace BarleyPlantType {
+export namespace BarleyCommon
+{
+	/// @enum CardCode
+	/// @brief 卡片编码定义
+	enum class CardCode : int
+	{
+		/// @brief 豌豆射手
+		PeaShooter,
+		/// @brief 向日葵
+		SunFlower,
+		/// @brief 坚果墙
+		WallNut,
+		/// @brief 土豆雷
+		PotatoMine,
+		/// @brief 寒冰射手
+		SnowPea,
+		/// @brief 大嘴花
+		Chomper,
+		/// @brief 双发射手
+		Repeater,
+		/// @brief 小喷菇
+		PuffShroom,
+		/// @brief 阳光菇
+		SunShroom,
+		/// @brief 大喷菇
+		FumeShroom,
+		/// @brief 魅惑菇
+		HypnoShroom,
+		/// @brief 胆小菇
+		ScaredyShroom,
+		/// @brief 寒冰菇
+		IceShroom,
+		/// @brief 荷叶
+		LilyPad,
+		/// @brief 窝瓜
+		Squash,
+		/// @brief 三线射手
+		Threepeater,
+		/// @brief 缠绕海草
+		TangleKelp,
+		/// @brief 火炬树桩
+		Torchwood,
+		/// @brief 高坚果
+		TallNut,
+		/// @brief 海蘑菇
+		SeaShroom,
+		/// @brief 路灯花
+		Plantern,
+		/// @brief 仙人掌
+		Cactus,
+		/// @brief 三叶草
+		Blover,
+		/// @brief 裂荚射手
+		SplitPea,
+		/// @brief 杨桃
+		Starfruit,
+		/// @brief 南瓜头
+		Pumpkin,
+		/// @brief 磁力菇
+		MagnetShroom,
+		/// @brief 卷心菜投手
+		CabbagePult,
+		/// @brief 花盆
+		FlowerPot,
+		/// @brief 玉米投手
+		KernelPult,
+		/// @brief 大蒜
+		Garlic,
+		/// @brief 叶子保护伞
+		UmbrellaLeaf,
+		/// @brief 金盏花
+		Marigold,
+		/// @brief 西瓜投手
+		MelonPult,
+		/// @brief 机枪射手
+		GatlingPea,
+		/// @brief 忧郁菇/忧郁南瓜
+		GloomShroom,
+		/// @brief 香蒲
+		Cattail,
+		/// @brief 冰瓜
+		WinterMelon,
+		/// @brief 吸金磁
+		GoldMagnet,
+		/// @brief 钢地刺
+		SpikeRock,
+		/// @brief 爆炸坚果
+		Explode_O_Nut,
+		/// @brief 火红莲
+		Endoflame,
+		/// @brief 反向双发
+		LeftRepeater,
+		/// @brief 大麦
+		Barley,
+		/// @brief 狙击豌豆
+		SniperShooter,
+		/// @brief 晶钻菇
+		DiamondShroom,
+		/// @brief 春分藤
+		SpringEquinoxVine,
+		/// @brief 幽冥菇
+		DarkShroom,
+		/// @brief 奶山竹
+		Mangosteen,
+		/// @brief 逆时草
+		ThymeWarp,
 
-    // 卡片编码定义
-    enum class CardCode : int {
-        // 基础植物
-        PeaShooter        = 0,  // 豌豆射手
-        Sunflower         = 1,  // 向日葵
-        CherryBomb        = 2,  // 樱桃炸弹
-        WallNut           = 3,  // 坚果墙
-        PotatoMine        = 4,  // 土豆雷
-        SnowPea           = 5,  // 寒冰射手
-        Chomper           = 6,  // 大嘴花
-        Repeater          = 7,  // 双发射手
-        PuffShroom        = 8,  // 小喷菇
-        SunShroom         = 9,  // 阳光菇
-        FumeShroom        = 10, // 大喷菇
-        GraveBuster       = 11, // 墓碑吞噬者
-        HypnoShroom       = 12, // 魅惑菇
-        ScaredyShroom     = 13, // 胆小菇
-        IceShroom         = 14, // 寒冰菇
-        DoomShroom        = 15, // 毁灭菇
-        LilyPad           = 16, // 荷叶
-        Squash            = 17, // 窝瓜
-        Threepeater       = 18, // 三线射手
-        TangleKelp        = 19, // 缠绕海草
-        Jalapeno          = 20, // 火爆辣椒
-        Spikeweed         = 21, // 地刺
-        Torchwood         = 22, // 火炬树桩
-        TallNut           = 23, // 高坚果
-        SeaShroom         = 24, // 海蘑菇
-        Plantern          = 25, // 路灯花
-        Cactus            = 26, // 仙人掌
-        Blover            = 27, // 三叶草
-        SplitPea          = 28, // 裂荚射手
-        Starfruit         = 29, // 杨桃
-        Pumpkin           = 30, // 南瓜头
-        MagnetShroom      = 31, // 磁力菇
-        CabbagePult       = 32, // 卷心菜投手
-        FlowerPot         = 33, // 花盆
-        KernelPult        = 34, // 玉米投手
-        CoffeeBean        = 35, // 咖啡豆
-        Garlic            = 36, // 大蒜
-        UmbrellaLeaf      = 37, // 叶子保护伞
-        Marigold          = 38, // 金盏花
-        MelonPult         = 39, // 西瓜投手
-        GatlingPea        = 40, // 机枪射手
-        TwinSunflower     = 41, // 双子向日葵
-        GloomShroom       = 42, // 忧郁菇
-        Cattail           = 43, // 猫尾草
-        WinterMelon       = 44, // 冰瓜
-        GoldMagnet        = 45, // 吸金磁
-        SpikeRock         = 46, // 地刺王
-        CobCannon         = 47, // 玉米加农炮
-        Imitater          = 48, // 模仿者
-        Explode_O_Nut     = 49, // 爆炸坚果
-        Barley            = 50, // 巨大坚果
-        Endoflame         = 51, // 幼苗
-        LeftRepeater      = 52, // 反向双发
-		SniperShooter     = 53, // 狙击豌豆
-		DiamondShroom     = 54, // 晶钻菇
-        /////////////////////////////////////////////////////
-        SpringEquinoxVine = 76, // 春分藤
-        DarkShroom        = 77, // 幽冥菇
-        Mangosteen        = 78, // 奶山竹
-        ThymeWarp         = 79, // 逆时草
-
-        // 特殊编码
-        NilPlant = -1,        // 空位 表示该赛季不存在该植物
-        BasePlant = -2       // 未知 表示可能输入错误
-    };
+		// 特殊编码
+		Nil = -1,        // 空位 表示该赛季不存在该植物
+		Invalid = -2       // 未知 表示可能输入错误
+	};
 
     // 卡片组定义
     struct CardSet {
@@ -116,8 +157,6 @@ export namespace BarleyPlantType {
     // 卡片编码到名称的映射
     export const std::map<CardCode, std::string> CARD_NAMES = {
         {CardCode::PeaShooter,       "豌豆射手"},
-        {CardCode::Sunflower,        "向日葵"},
-        {CardCode::CherryBomb,       "樱桃炸弹"},
         {CardCode::WallNut,          "坚果墙"},
         {CardCode::PotatoMine,       "土豆雷"},
         {CardCode::SnowPea,          "寒冰射手"},
@@ -126,17 +165,13 @@ export namespace BarleyPlantType {
         {CardCode::PuffShroom,       "小喷菇"},
         {CardCode::SunShroom,        "阳光菇"},
         {CardCode::FumeShroom,       "大喷菇"},
-        {CardCode::GraveBuster,      "墓碑吞噬者"},
         {CardCode::HypnoShroom,      "魅惑菇"},
         {CardCode::ScaredyShroom,    "胆小菇"},
         {CardCode::IceShroom,        "寒冰菇"},
-        {CardCode::DoomShroom,       "毁灭菇"},
         {CardCode::LilyPad,          "荷叶"},
         {CardCode::Squash,           "窝瓜"},
         {CardCode::Threepeater,      "三线射手"},
         {CardCode::TangleKelp,       "缠绕海草"},
-        {CardCode::Jalapeno,         "火爆辣椒"},
-        {CardCode::Spikeweed,        "地刺"},
         {CardCode::Torchwood,        "火炬树桩"},
         {CardCode::TallNut,          "高坚果"},
         {CardCode::SeaShroom,        "海蘑菇"},
@@ -150,20 +185,16 @@ export namespace BarleyPlantType {
         {CardCode::CabbagePult,      "卷心菜投手"},
         {CardCode::FlowerPot,        "花盆"},
         {CardCode::KernelPult,       "玉米投手"},
-        {CardCode::CoffeeBean,       "咖啡豆"},
         {CardCode::Garlic,           "大蒜"},
         {CardCode::UmbrellaLeaf,     "叶子保护伞"},
         {CardCode::Marigold,         "金盏花"},
         {CardCode::MelonPult,        "西瓜投手"},
         {CardCode::GatlingPea,       "机枪射手"},
-        {CardCode::TwinSunflower,    "双子向日葵"},
         {CardCode::GloomShroom,      "忧郁菇"},
         {CardCode::Cattail,          "猫尾草"},
         {CardCode::WinterMelon,      "冰瓜"},
         {CardCode::GoldMagnet,       "吸金磁"},
         {CardCode::SpikeRock,        "地刺王"},
-        {CardCode::CobCannon,        "玉米加农炮"},
-        {CardCode::Imitater,         "模仿者"},
         {CardCode::Explode_O_Nut,    "爆炸坚果"},
         {CardCode::SpikeRock,        "地刺王"},
         {CardCode::Barley,           "巨大坚果"},
@@ -173,8 +204,8 @@ export namespace BarleyPlantType {
         {CardCode::DarkShroom,       "幽冥菇"},
         {CardCode::Mangosteen,       "奶山竹"},
         {CardCode::ThymeWarp,        "逆时草"},
-        {CardCode::NilPlant,         "空"},
-        {CardCode::BasePlant,        "未知"}
+        {CardCode::Nil,         "空"},
+        {CardCode::Invalid,        "未知"}
     };
 
     // 卡片组数据库（基于题目数据）
@@ -308,7 +339,7 @@ export namespace BarleyPlantType {
                  "卷", "空", "玉", "空", "蒜", "伞", "金", "瓜",
                  "机", "空", "曾", "猫", "冰", "吸", "刺", "空",
                  "空", "爆", "麦", "飘", "反", "藤", "幽", "奶",
-                 "逆", "BasePlant", "BasePlant"} //(？
+                 "逆", "Invalid", "Invalid"} //(？
                 });
         }
 
