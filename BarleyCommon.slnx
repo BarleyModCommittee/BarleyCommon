@@ -3,6 +3,9 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
+  <Folder Name="/解决方案项/">
+    <File Path=".editorconfig" />
+  </Folder>
   <Project Path="BarleyCommon.vcxproj" Id="4f1377c1-effc-44ef-9360-08bc4637a259" />
   <Project Path="include/pvzclass/pvzclass/pvzclass.vcxproj" Id="703410a4-a7e7-4fff-a8d0-c7b8b5329575" />
 </Solution>
