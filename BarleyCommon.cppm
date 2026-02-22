@@ -550,6 +550,30 @@ namespace BarleyCommon
 	};
 	constexpr auto CodeMap = genCodeMap();
 
+	string_view toString(const CardCode code)
+	{
+		if (code >= static_cast<CardCode>(0) && code < CardCode::Last)
+			return CodeMap[static_cast<int>(code)];
+
+		switch (code)
+		{
+		case CardCode::Nil:
+			return "空";
+		default:
+			return "Invalid";
+		}
+	}
+
+	CardCode String2Code(const string_view& view)
+	{
+		for (int i = 0; i < static_cast<int>(CardCode::Last); i++)
+			if (CodeMap[i] == view)
+				return static_cast<CardCode>(i);
+
+		if (view == "空")
+			return CardCode::Nil;
+		return CardCode::Unknown;
+	}
 
 }
 
