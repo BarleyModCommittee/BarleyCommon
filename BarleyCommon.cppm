@@ -122,7 +122,7 @@ export namespace BarleyCommon
 
 		// 特殊编码
 		Nil = -1,        // 空位 表示该赛季不存在该植物
-		Invalid = -2       // 未知 表示可能输入错误
+		Unknown = -2       // 未知 表示可能输入错误
 	};
 
     // 卡片组定义
@@ -205,7 +205,7 @@ export namespace BarleyCommon
         {CardCode::Mangosteen,       "奶山竹"},
         {CardCode::ThymeWarp,        "逆时草"},
         {CardCode::Nil,         "空"},
-        {CardCode::Invalid,        "未知"}
+        {CardCode::Unknown,        "未知"}
     };
 
     // 卡片组数据库（基于题目数据）
