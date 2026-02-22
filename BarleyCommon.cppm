@@ -1,17 +1,25 @@
-export module BarleyCommon;
-
-//export void MyFunc(); 
+module;
 
 #include <vector>
 #include <string>
 #include <stdexcept>
 #include <format>
-#include <array>
 #include <map>
-#include <ranges>
 #include <concepts>
-#include <string_view>
 #include <algorithm>
+
+export module BarleyCommon;
+
+import <array>;
+import <ranges>;
+import <string>;
+import <string_view>;
+import <utility>;
+
+using std::array;
+using std::pair;
+using std::string;
+using std::string_view;
 
 export namespace BarleyCommon
 {
@@ -119,6 +127,8 @@ export namespace BarleyCommon
 		Mangosteen,
 		/// @brief 逆时草
 		ThymeWarp,
+		/// @brief 正常植物号码的总数
+		Last,
 
 		// 特殊编码
 		Nil = -1,        // 空位 表示该赛季不存在该植物
@@ -520,7 +530,28 @@ export namespace BarleyCommon
     };
 }
 
+namespace BarleyCommon
+{
+	constexpr auto genCodeMap = []()
+	{
+		array<string_view, static_cast<size_t>(CardCode::Last)> map =
+		{
+			"豌", "葵", "坚", "雷", "寒", "嘴", "双",
+			"小", "阳", "大", "魅", "胆", "川",
+			"莲", "窝", "三", "缠", "火", "高",
+			"海", "灯", "掌", "叶", "裂", "星", "南", "磁",
+			"卷", "盆", "玉", "蒜", "伞", "金", "瓜",
+			"机", "曾", "猫", "冰", "吸", "刺",
+			"爆", "飘", "反", "麦",
+			"狙", "钻", "藤", "幽", "奶", "逆"
+		};
 
+		return map;
+	};
+	constexpr auto CodeMap = genCodeMap();
+
+
+}
 
 /*
 
