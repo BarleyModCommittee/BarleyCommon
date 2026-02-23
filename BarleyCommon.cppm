@@ -549,8 +549,11 @@ namespace BarleyCommon
 		return map;
 	};
 	constexpr auto CodeMap = genCodeMap();
+}
 
-	string_view toString(const CardCode code)
+export namespace BarleyCommon
+{
+	string_view toShortName(const CardCode code)
 	{
 		if (code >= static_cast<CardCode>(0) && code < CardCode::Last)
 			return CodeMap[static_cast<int>(code)];
@@ -564,7 +567,7 @@ namespace BarleyCommon
 		}
 	}
 
-	CardCode String2Code(const string_view& view)
+	CardCode ShortName2Code(const string_view& view)
 	{
 		for (int i = 0; i < static_cast<int>(CardCode::Last); i++)
 			if (CodeMap[i] == view)
