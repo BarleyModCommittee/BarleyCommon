@@ -575,6 +575,8 @@ export namespace BarleyCommon
 
 		if (view == "空")
 			return CardCode::Nil;
+		if (view == "仙")
+			return CardCode::Cactus;
 		return CardCode::Unknown;
 	}
 
