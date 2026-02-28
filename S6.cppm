@@ -10,32 +10,41 @@ using std::array;
 using std::optional;
 using std::string_view;
 
+namespace SeedType
+{
+	using Type2 = SeedType;
+	inline constexpr Type2 SpringEquinoxVine = Type2(0x4C);
+	inline constexpr Type2 NetherShroom = Type2(0x4D);
+	inline constexpr Type2 Mangosteen = Type2(0x4E);
+	inline constexpr Type2 ThymeWarp = Type2(0x4F);
+}
+
 namespace BarleyCommon::S6
 {
 	constexpr array<SeedType::SeedType, static_cast<size_t>(CardCode::Last)> SeedTypeMap =
 	{
-		SeedType::Peashooter,	SeedType::None,			SeedType::Wallnut,		SeedType::PotatoMine,
+		SeedType::None,			SeedType::None,			SeedType::Wallnut,		SeedType::PotatoMine,
 								SeedType::SnowPea,		SeedType::Chomper,		SeedType::Repeater,
 
-		SeedType::Puffshroom,	SeedType::None,			SeedType::Fumeshroom,
+		SeedType::Puffshroom,	SeedType::Sunshroom,	SeedType::Fumeshroom,
 		SeedType::Hypnoshroom,	SeedType::Scaredyshroom,SeedType::Iceshroom,
 
-		SeedType::LilyPad,		SeedType::Squash,		SeedType::Threepeater,	SeedType::None,
+		SeedType::None,			SeedType::Squash,		SeedType::Threepeater,	SeedType::TangleKelp,
 														SeedType::Torchwood,	SeedType::Tallnut,
 
-		SeedType::Seashroom,	SeedType::None,			SeedType::Cactus,		SeedType::None,
-		SeedType::SplitPea,		SeedType::Starfruit,	SeedType::Pumpkin,		SeedType::Magnetshroom,
+		SeedType::Seashroom,	SeedType::Plantern,		SeedType::Cactus,		SeedType::Blover,
+		SeedType::SplitPea,		SeedType::Starfruit,	SeedType::None,			SeedType::Magnetshroom,
 
-		SeedType::Cabbagepult,	SeedType::FlowerPot,	SeedType::Kernelpult,
-		SeedType::Garlic,		SeedType::UmbrellaLeaf, SeedType::None,			SeedType::Melonpult,
+		SeedType::Cabbagepult,	SeedType::None,			SeedType::Kernelpult,
+		SeedType::Garlic,		SeedType::UmbrellaLeaf, SeedType::Marigold,		SeedType::Melonpult,
 
 		SeedType::GatlingPea,							SeedType::Gloomshroom,	SeedType::Cattail,
-		SeedType::WinterMelon,	SeedType::None,			SeedType::Spikerock,
+		SeedType::WinterMelon,	SeedType::GoldMagnet,	SeedType::Spikerock,
 
-		SeedType::Explodenut,	SeedType::None,			SeedType::None,			SeedType::Sunflower,
+		SeedType::Explodenut,	SeedType::Sprout,		SeedType::LeftRepeater,	SeedType::Sunflower,
 
-		SeedType::None,			SeedType::None,			SeedType::None,			SeedType::None,
-		SeedType::None,			SeedType::None
+		SeedType::Peashooter,	SeedType::LilyPad,		SeedType::SpringEquinoxVine,	SeedType::NetherShroom,
+		SeedType::Mangosteen,	SeedType::ThymeWarp
 	};
 }
 
