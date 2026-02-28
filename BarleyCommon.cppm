@@ -1,17 +1,25 @@
-export module BarleyCommon;
-
-//export void MyFunc(); 
+module;
 
 #include <vector>
 #include <string>
 #include <stdexcept>
 #include <format>
-#include <array>
 #include <map>
-#include <ranges>
 #include <concepts>
-#include <string_view>
 #include <algorithm>
+
+export module BarleyCommon;
+
+import <array>;
+import <ranges>;
+import <string>;
+import <string_view>;
+import <utility>;
+
+using std::array;
+using std::pair;
+using std::string;
+using std::string_view;
 
 export namespace BarleyCommon
 {
@@ -119,10 +127,12 @@ export namespace BarleyCommon
 		Mangosteen,
 		/// @brief 逆时草
 		ThymeWarp,
+		/// @brief 正常植物号码的总数
+		Last,
 
 		// 特殊编码
 		Nil = -1,        // 空位 表示该赛季不存在该植物
-		Invalid = -2       // 未知 表示可能输入错误
+		Unknown = -2       // 未知 表示可能输入错误
 	};
 
     // 卡片组定义
@@ -205,7 +215,7 @@ export namespace BarleyCommon
         {CardCode::Mangosteen,       "奶山竹"},
         {CardCode::ThymeWarp,        "逆时草"},
         {CardCode::Nil,         "空"},
-        {CardCode::Invalid,        "未知"}
+        {CardCode::Unknown,        "未知"}
     };
 
     // 卡片组数据库（基于题目数据）
@@ -339,7 +349,7 @@ export namespace BarleyCommon
                  "卷", "空", "玉", "空", "蒜", "伞", "金", "瓜",
                  "机", "空", "曾", "猫", "冰", "吸", "刺", "空",
                  "空", "爆", "麦", "飘", "反", "藤", "幽", "奶",
-                 "逆", "Invalid", "Invalid"} //(？
+                 "逆"} //(？
                 });
         }
 
@@ -520,7 +530,81 @@ export namespace BarleyCommon
     };
 }
 
+namespace BarleyCommon
+{
+	constexpr auto genCodeMap = []()
+	{
+		array<string_view, static_cast<size_t>(CardCode::Last)> map =
+		{
+			"豌", "葵", "坚", "雷", "寒", "嘴", "双",
+			"小", "阳", "大", "魅", "胆", "川",
+			"莲", "窝", "三", "缠", "火", "高",
+			"海", "灯", "掌", "叶", "裂", "星", "南", "磁",
+			"卷", "盆", "玉", "蒜", "伞", "金", "瓜",
+			"机", "曾", "猫", "冰", "吸", "刺",
+			"爆", "飘", "反", "麦",
+			"狙", "钻", "藤", "幽", "奶", "逆"
+		};
 
+		return map;
+	};
+	constexpr auto CodeMap = genCodeMap();
+	constexpr array<string_view, static_cast<size_t>(CardCode::Last)> CodeNameMap = 
+	{
+		"豌豆射手", "向日葵", "坚果墙", "土豆雷", "寒冰射手", "大嘴花", "双发射手",
+		"小喷菇", "阳光菇", "大喷菇", "魅惑菇", "胆小菇", "冰川菇",
+		"荷叶", "窝瓜", "三线射手", "缠绕海草", "火炬树桩", "高坚果",
+		"海蘑菇", "路灯花", "仙人掌", "三叶草", "裂荚射手", "杨桃", "南瓜壳", "磁力菇",
+		"卷心菜投手", "花盆", "玉米投手", "大蒜", "叶子保护伞", "金盏花", "西瓜投手",
+		"机枪射手", "忧郁菇", "猫尾草", "冰瓜", "吸金磁", "地刺王",
+		"爆炸坚果", "火红莲", "反向双发", "大麦",
+		"狙击豌豆", "晶钻菇", "春分藤", "幽冥菇", "奶山竹", "逆时草"
+	};
+}
+
+export namespace BarleyCommon
+{
+	string_view toShortName(const CardCode code)
+	{
+		if (code >= static_cast<CardCode>(0) && code < CardCode::Last)
+			return CodeMap[static_cast<int>(code)];
+
+		switch (code)
+		{
+		case CardCode::Nil:
+			return "空";
+		default:
+			return "Invalid";
+		}
+	}
+
+	CardCode ShortName2Code(const string_view& view)
+	{
+		for (int i = 0; i < static_cast<int>(CardCode::Last); i++)
+			if (CodeMap[i] == view)
+				return static_cast<CardCode>(i);
+
+		if (view == "空")
+			return CardCode::Nil;
+		if (view == "仙")
+			return CardCode::Cactus;
+		return CardCode::Unknown;
+	}
+
+	string_view getName(const CardCode code)
+	{
+		if (code >= static_cast<CardCode>(0) && code < CardCode::Last)
+			return CodeNameMap[static_cast<int>(code)];
+
+		switch (code)
+		{
+		case CardCode::Nil:
+			return "空";
+		default:
+			return "Invalid";
+		}
+	}
+}
 
 /*
 
