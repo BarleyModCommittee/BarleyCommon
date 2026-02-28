@@ -1,20 +1,11 @@
-module;
-
-#include <vector>
-#include <string>
-#include <stdexcept>
-#include <format>
-#include <map>
-#include <concepts>
-#include <algorithm>
-
-export module BarleyCommon;
+export module BarleyCommon:Def;
 
 import <array>;
 import <ranges>;
 import <string>;
 import <string_view>;
 import <utility>;
+import index;
 
 using std::array;
 using std::pair;

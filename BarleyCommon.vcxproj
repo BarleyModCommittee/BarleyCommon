@@ -131,7 +131,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="BarleyCommon.cppm" />
+    <ClCompile Include="Def.cppm" />
     <ClCompile Include="index.cppm" />
   </ItemGroup>
   <ItemGroup>
