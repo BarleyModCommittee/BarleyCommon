@@ -27,5 +27,11 @@
     <ClCompile Include="S1.cppm">
       <Filter>模块文件\Season</Filter>
     </ClCompile>
+    <ClCompile Include="S6.cppm">
+      <Filter>模块文件\Season</Filter>
+    </ClCompile>
+    <ClCompile Include="BarleyCommon.cppm">
+      <Filter>模块文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

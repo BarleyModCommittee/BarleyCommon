@@ -131,9 +131,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BarleyCommon.cppm" />
     <ClCompile Include="Def.cppm" />
     <ClCompile Include="index.cppm" />
     <ClCompile Include="S1.cppm" />
+    <ClCompile Include="S6.cppm" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="include\pvzclass\pvzclass\pvzclass.vcxproj">
