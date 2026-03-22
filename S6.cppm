@@ -19,6 +19,26 @@ namespace SeedType
 	inline constexpr Type2 ThymeWarp = Type2(0x4F);
 }
 
+export namespace BarleyCommon::S6
+{
+	enum class RoleType : uint8_t
+	{
+		None = 0,
+		/// @brief Ⅰ 类输出
+		CarryTypeA,
+		/// @brief Ⅱ 类输出
+		CarryTypeB,
+		/// @brief 控制
+		Disabler,
+		/// @brief 辅助
+		Support,
+		/// @brief 前排
+		Durable,
+		/// @brief 抗性
+		Resistance
+	};
+}
+
 namespace BarleyCommon::S6
 {
 	constexpr array<SeedType::SeedType, static_cast<size_t>(CardCode::Last)> SeedTypeMap =
@@ -46,6 +66,32 @@ namespace BarleyCommon::S6
 		SeedType::Peashooter,	SeedType::LilyPad,		SeedType::SpringEquinoxVine,	SeedType::NetherShroom,
 		SeedType::Mangosteen,	SeedType::ThymeWarp
 	};
+
+	constexpr array<RoleType, static_cast<size_t>(CardCode::Last)> RoleTypeMap =
+	{
+		RoleType::None,			RoleType::None,			RoleType::Durable,		RoleType::CarryTypeA,
+								RoleType::Disabler,		RoleType::Durable,		RoleType::CarryTypeB,
+
+		RoleType::CarryTypeB,	RoleType::CarryTypeA,	RoleType::CarryTypeA,
+		RoleType::Resistance,	RoleType::CarryTypeB,	RoleType::Support,
+
+		RoleType::None,			RoleType::CarryTypeB,	RoleType::CarryTypeB,	RoleType::Disabler,
+														RoleType::Support,		RoleType::Durable,
+
+		RoleType::CarryTypeB,	RoleType::Support,		RoleType::Durable,		RoleType::Support,
+		RoleType::CarryTypeB,	RoleType::CarryTypeB,	RoleType::None,			RoleType::Resistance,
+
+		RoleType::CarryTypeB,	RoleType::None,			RoleType::Disabler,
+		RoleType::Durable,		RoleType::Resistance,	RoleType::Support,		RoleType::CarryTypeA,
+
+		RoleType::CarryTypeA,							RoleType::CarryTypeA,	RoleType::CarryTypeB,
+		RoleType::Disabler,		RoleType::Support,		RoleType::Durable,
+
+		RoleType::Durable,		RoleType::CarryTypeB,	RoleType::CarryTypeB,	RoleType::None,
+
+		RoleType::Resistance,	RoleType::CarryTypeB,	RoleType::Support,		RoleType::CarryTypeB,
+		RoleType::CarryTypeB,	RoleType::Resistance
+	};
 }
 
 export namespace BarleyCommon::S6
@@ -70,6 +116,20 @@ export namespace BarleyCommon::S6
 		{
 		case CardCode::Nil:
 			return SeedType::None;
+		default:
+			return std::nullopt;
+		}
+	}
+
+	optional<RoleType> getRole(const CardCode code)
+	{
+		if (code >= static_cast<CardCode>(0) && code < CardCode::Last)
+			return RoleTypeMap[static_cast<int>(code)];
+
+		switch (code)
+		{
+		case CardCode::Nil:
+			return RoleType::None;
 		default:
 			return std::nullopt;
 		}
