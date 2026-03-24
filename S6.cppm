@@ -92,10 +92,32 @@ namespace BarleyCommon::S6
 		RoleType::Resistance,	RoleType::CarryTypeB,	RoleType::Support,		RoleType::CarryTypeB,
 		RoleType::CarryTypeB,	RoleType::Resistance
 	};
+
+	constexpr size_t NotNullCodeCNT = []() constexpr
+	{
+		size_t cnt = 0;
+		for (auto type : SeedTypeMap)
+			if (type != SeedType::None)
+				++cnt;
+		return cnt;
+	}();
 }
 
 export namespace BarleyCommon::S6
 {
+	constexpr auto ValidCodes = []() constexpr
+	{
+		std::array<CardCode, NotNullCodeCNT> result;
+		size_t idx = 0;
+		for (int i = 0; auto type : SeedTypeMap)
+		{
+			if (type != SeedType::None)
+				result[idx++] = static_cast<CardCode>(i);
+			i++;
+		}
+		return result;
+	}();
+
 	CardCode SeedType2Code(const SeedType::SeedType &type)
 	{
 		for (int i = 0; i < static_cast<int>(CardCode::Last); i++)
