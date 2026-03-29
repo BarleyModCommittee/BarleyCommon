@@ -12,7 +12,7 @@ using std::string_view;
 
 namespace BarleyCommon::S1
 {
-	constexpr array<SeedType::SeedType, static_cast<size_t>(CardCode::Last)> SeedTypeMap =
+	constexpr array<SeedType, static_cast<size_t>(CardCode::Last)> SeedTypeMap =
 	{
 		SeedType::Peashooter,	SeedType::None,			SeedType::Wallnut,		SeedType::PotatoMine,
 								SeedType::SnowPea,		SeedType::Chomper,		SeedType::Repeater,
@@ -63,7 +63,7 @@ export namespace BarleyCommon::S1
 		return result;
 	}();
 
-	CardCode SeedType2Code(const SeedType::SeedType &type)
+	CardCode SeedType2Code(const SeedType &type)
 	{
 		for (int i = 0; i < static_cast<int>(CardCode::Last); i++)
 			if (SeedTypeMap[i] == type)
@@ -74,7 +74,7 @@ export namespace BarleyCommon::S1
 		return CardCode::Unknown;
 	}
 
-	optional<SeedType::SeedType> getType(const CardCode code)
+	optional<SeedType> getType(const CardCode code)
 	{
 		if (code >= static_cast<CardCode>(0) && code < CardCode::Last)
 			return SeedTypeMap[static_cast<int>(code)];
