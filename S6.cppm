@@ -1,6 +1,5 @@
 export module BarleyCommon:S6;
 
-import :index;
 import :Def;
 import <array>;
 import <string_view>;

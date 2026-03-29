@@ -5,7 +5,6 @@ import <ranges>;
 import <string>;
 import <string_view>;
 import <utility>;
-import :index;
 
 using std::array;
 using std::pair;
