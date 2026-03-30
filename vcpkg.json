@@ -1,6 +1,0 @@
-{
-  "dependencies": [
-    "sol2",
-    "luajit"
-  ]
-}

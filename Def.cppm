@@ -5,7 +5,6 @@ import <ranges>;
 import <string>;
 import <string_view>;
 import <utility>;
-import :index;
 
 using std::array;
 using std::pair;
@@ -129,6 +128,69 @@ export namespace BarleyCommon
 
 namespace BarleyCommon
 {
+	enum class SeedType : int
+	{
+		None = -1,
+		Peashooter,
+		Sunflower,
+		CherryBomb,
+		Wallnut,
+		PotatoMine,
+		SnowPea,
+		Chomper,
+		Repeater,
+		Puffshroom,
+		Sunshroom,
+		Fumeshroom,
+		GraveBuster,
+		Hypnoshroom,
+		Scaredyshroom,
+		Iceshroom,
+		Doomshroom,
+		LilyPad,
+		Squash,
+		Threepeater,
+		TangleKelp,
+		Jalapeno,
+		Spickweed,
+		Torchwood,
+		Tallnut,
+		Seashroom,
+		Plantern,
+		Cactus,
+		Blover,
+		SplitPea,
+		Starfruit,
+		Pumpkin,
+		Magnetshroom,
+		Cabbagepult,
+		FlowerPot,
+		Kernelpult,
+		CoffeeBean,
+		Garlic,
+		UmbrellaLeaf,
+		Marigold,
+		Melonpult,
+		GatlingPea,
+		TwinSunflower,
+		Gloomshroom,
+		Cattail,
+		WinterMelon,
+		GoldMagnet,
+		Spikerock,
+		CobCannon,
+		Imitater,
+		Explodenut,
+		GiantWallnut,
+		Sprout,
+		LeftRepeater,
+
+		SpringEquinoxVineS6 = 0x4C,
+		DarkShroomS6 = 0x4D,
+		MangosteenS6 = 0x4E,
+		ThymeWarpS6 = 0x4F
+	};
+
 	constexpr auto genCodeMap = []()
 	{
 		array<string_view, static_cast<size_t>(CardCode::Last)> map =
