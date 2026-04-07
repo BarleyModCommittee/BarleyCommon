@@ -124,6 +124,23 @@ export namespace BarleyCommon
 		Nil = -1,        // 空位 表示该赛季不存在该植物
 		Unknown = -2       // 未知 表示可能输入错误
 	};
+	
+	enum class RoleType : uint8_t
+	{
+		None = 0,
+		/// @brief Ⅰ 类输出
+		CarryTypeA,
+		/// @brief Ⅱ 类输出
+		CarryTypeB,
+		/// @brief 控制
+		Disabler,
+		/// @brief 辅助
+		Support,
+		/// @brief 前排
+		Durable,
+		/// @brief 抗性
+		Resistance
+	};
 }
 
 namespace BarleyCommon

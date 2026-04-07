@@ -9,26 +9,6 @@ using std::array;
 using std::optional;
 using std::string_view;
 
-export namespace BarleyCommon::S6
-{
-	enum class RoleType : uint8_t
-	{
-		None = 0,
-		/// @brief Ⅰ 类输出
-		CarryTypeA,
-		/// @brief Ⅱ 类输出
-		CarryTypeB,
-		/// @brief 控制
-		Disabler,
-		/// @brief 辅助
-		Support,
-		/// @brief 前排
-		Durable,
-		/// @brief 抗性
-		Resistance
-	};
-}
-
 namespace BarleyCommon::S6
 {
 	constexpr array<SeedType, static_cast<size_t>(CardCode::Last)> SeedTypeMap =
