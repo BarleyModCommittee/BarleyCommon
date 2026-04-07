@@ -1,0 +1,21 @@
+cmake_minimum_required(VERSION 3.29)
+project(BarleyCommon LANGUAGES CXX)
+
+set(BARLEYCOMMON_TARGET_NAME ${PROJECT_NAME})
+
+# Collect all .cppm module files
+file(GLOB_RECURSE MODULE_FILES CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/*.cppm")
+
+add_library(${BARLEYCOMMON_TARGET_NAME} STATIC)
+
+if(MSVC)
+	target_compile_options(${BARLEYCOMMON_TARGET_NAME} PRIVATE /utf-8 /scanDependencies )
+endif()
+
+target_sources(${BARLEYCOMMON_TARGET_NAME} 
+	PUBLIC FILE_SET CXX_MODULES
+	BASE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}
+	FILES ${MODULE_FILES}
+)
+
+target_compile_features(${BARLEYCOMMON_TARGET_NAME} PRIVATE cxx_std_20)
