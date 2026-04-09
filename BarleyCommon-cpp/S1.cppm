@@ -1,13 +1,7 @@
 export module BarleyCommon:S1;
 
+import :Index;
 import :Def;
-import <array>;
-import <string_view>;
-import <optional>;
-
-using std::array;
-using std::optional;
-using std::string_view;
 
 namespace BarleyCommon::S1
 {

@@ -1,0 +1,15 @@
+module;
+
+#include <array>
+#include <string>
+#include <string_view>
+#include <optional>
+
+export module BarleyCommon:Index;
+
+export using std::array;
+export using std::uint8_t;
+export using std::optional;
+export using std::nullopt;
+export using std::string;
+export using std::string_view;

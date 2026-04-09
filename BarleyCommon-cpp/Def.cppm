@@ -1,15 +1,6 @@
 export module BarleyCommon:Def;
 
-import <array>;
-import <ranges>;
-import <string>;
-import <string_view>;
-import <utility>;
-
-using std::array;
-using std::pair;
-using std::string;
-using std::string_view;
+import :Index;
 
 export namespace BarleyCommon
 {
@@ -257,12 +248,12 @@ export namespace BarleyCommon
 	CardCode ShortName2Code(const string_view& view)
 	{
 		for (int i = 0; i < static_cast<int>(CardCode::Last); i++)
-			if (CodeMap[i] == view)
+			if (CodeMap[i].compare(view) == 0)
 				return static_cast<CardCode>(i);
 
-		if (view == "空")
+		if (view.compare("空") == 0)
 			return CardCode::Nil;
-		if (view == "仙")
+		if (view.compare("仙") == 0)
 			return CardCode::Cactus;
 		return CardCode::Unknown;
 	}

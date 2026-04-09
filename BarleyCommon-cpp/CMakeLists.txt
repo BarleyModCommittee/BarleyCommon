@@ -3,13 +3,12 @@ project(BarleyCommon LANGUAGES CXX)
 
 set(BARLEYCOMMON_TARGET_NAME ${PROJECT_NAME})
 
-# Collect all .cppm module files
 file(GLOB_RECURSE MODULE_FILES CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/*.cppm")
 
 add_library(${BARLEYCOMMON_TARGET_NAME} STATIC)
 
 if(MSVC)
-	target_compile_options(${BARLEYCOMMON_TARGET_NAME} PRIVATE /utf-8 /scanDependencies )
+	target_compile_options(${BARLEYCOMMON_TARGET_NAME} PRIVATE /utf-8 /Zi /W3 /Oi)
 endif()
 
 target_sources(${BARLEYCOMMON_TARGET_NAME} 
