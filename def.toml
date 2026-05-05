@@ -1,0 +1,442 @@
+# ============================================================
+# BarleyCommon 常量定义
+# 用于生成多语言库的源数据
+# ============================================================
+
+# ============================================================
+# CardCode - 卡片编码定义
+# value: 枚举值 (int)
+# short: 单字简称
+# alias: 完整中文名称
+# ============================================================
+[CardCode.PeaShooter]
+value = 0
+short = "豌"
+alias = "豌豆射手"
+
+[CardCode.SunFlower]
+value = 1
+short = "葵"
+alias = "向日葵"
+
+[CardCode.WallNut]
+value = 2
+short = "坚"
+alias = "坚果墙"
+
+[CardCode.PotatoMine]
+value = 3
+short = "雷"
+alias = "土豆雷"
+
+[CardCode.SnowPea]
+value = 4
+short = "寒"
+alias = "寒冰射手"
+
+[CardCode.Chomper]
+value = 5
+short = "嘴"
+alias = "大嘴花"
+
+[CardCode.Repeater]
+value = 6
+short = "双"
+alias = "双发射手"
+
+[CardCode.PuffShroom]
+value = 7
+short = "小"
+alias = "小喷菇"
+
+[CardCode.SunShroom]
+value = 8
+short = "阳"
+alias = "阳光菇"
+
+[CardCode.FumeShroom]
+value = 9
+short = "喷"
+alias = "大喷菇"
+
+[CardCode.HypnoShroom]
+value = 10
+short = "魅"
+alias = "魅惑菇"
+
+[CardCode.ScaredyShroom]
+value = 11
+short = "胆"
+alias = "胆小菇"
+
+[CardCode.IceShroom]
+value = 12
+short = "川"
+alias = "冰川菇"
+
+[CardCode.LilyPad]
+value = 13
+short = "莲"
+alias = "荷叶"
+
+[CardCode.Squash]
+value = 14
+short = "窝"
+alias = "窝瓜"
+
+[CardCode.Threepeater]
+value = 15
+short = "三"
+alias = "三线射手"
+
+[CardCode.TangleKelp]
+value = 16
+short = "缠"
+alias = "缠绕海草"
+
+[CardCode.Torchwood]
+value = 17
+short = "火"
+alias = "火炬树桩"
+
+[CardCode.TallNut]
+value = 18
+short = "高"
+alias = "高坚果"
+
+[CardCode.SeaShroom]
+value = 19
+short = "海"
+alias = "海蘑菇"
+
+[CardCode.Plantern]
+value = 20
+short = "灯"
+alias = "路灯花"
+
+[CardCode.Cactus]
+value = 21
+short = "掌"
+alias = "仙人掌"
+
+[CardCode.Blover]
+value = 22
+short = "叶"
+alias = "三叶草"
+
+[CardCode.SplitPea]
+value = 23
+short = "裂"
+alias = "裂荚射手"
+
+[CardCode.Starfruit]
+value = 24
+short = "星"
+alias = "杨桃"
+
+[CardCode.Pumpkin]
+value = 25
+short = "南"
+alias = "南瓜壳"
+
+[CardCode.MagnetShroom]
+value = 26
+short = "磁"
+alias = "磁力菇"
+
+[CardCode.CabbagePult]
+value = 27
+short = "卷"
+alias = "卷心菜投手"
+
+[CardCode.FlowerPot]
+value = 28
+short = "盆"
+alias = "花盆"
+
+[CardCode.KernelPult]
+value = 29
+short = "玉"
+alias = "玉米投手"
+
+[CardCode.Garlic]
+value = 30
+short = "蒜"
+alias = "大蒜"
+
+[CardCode.UmbrellaLeaf]
+value = 31
+short = "伞"
+alias = "叶子保护伞"
+
+[CardCode.Marigold]
+value = 32
+short = "金"
+alias = "金盏花"
+
+[CardCode.MelonPult]
+value = 33
+short = "瓜"
+alias = "西瓜投手"
+
+[CardCode.GatlingPea]
+value = 34
+short = "机"
+alias = "机枪射手"
+
+[CardCode.GloomShroom]
+value = 35
+short = "曾"
+alias = "忧郁菇/忧郁南瓜"
+
+[CardCode.Cattail]
+value = 36
+short = "猫"
+alias = "猫尾草"
+
+[CardCode.WinterMelon]
+value = 37
+short = "冰"
+alias = "冰瓜"
+
+[CardCode.GoldMagnet]
+value = 38
+short = "吸"
+alias = "吸金磁"
+
+[CardCode.SpikeRock]
+value = 39
+short = "刺"
+alias = "地刺王"
+
+[CardCode.Explode_O_Nut]
+value = 40
+short = "爆"
+alias = "爆炸坚果"
+
+[CardCode.Endoflame]
+value = 41
+short = "飘"
+alias = "火红莲"
+
+[CardCode.LeftRepeater]
+value = 42
+short = "反"
+alias = "反向双发"
+
+[CardCode.Barley]
+value = 43
+short = "麦"
+alias = "大麦"
+
+[CardCode.SniperShooter]
+value = 44
+short = "狙"
+alias = "狙击豌豆"
+
+[CardCode.DiamondShroom]
+value = 45
+short = "钻"
+alias = "晶钻菇"
+
+[CardCode.SpringEquinoxVine]
+value = 46
+short = "藤"
+alias = "春分藤"
+
+[CardCode.DarkShroom]
+value = 47
+short = "幽"
+alias = "幽冥菇"
+
+[CardCode.Mangosteen]
+value = 48
+short = "奶"
+alias = "奶山竹"
+
+[CardCode.ThymeWarp]
+value = 49
+short = "逆"
+alias = "逆时草"
+
+[CardCode.Last]
+value = 50
+
+# 特殊编码
+[CardCode.Nil]
+value = -1
+
+[CardCode.Unknown]
+value = -2
+
+# ============================================================
+# RoleType - 角色类型定义
+# value: 枚举值 (uint8_t)
+# name: 中文名称（用于生成注释）
+# ============================================================
+[RoleType]
+None = { value = 0, name = "无" }
+CarryTypeA = { value = 1, name = "Ⅰ 类输出" }
+CarryTypeB = { value = 2, name = "Ⅱ 类输出" }
+Disabler = { value = 3, name = "控制" }
+Support = { value = 4, name = "辅助" }
+Durable = { value = 5, name = "前排" }
+Resistance = { value = 6, name = "抗性" }
+
+# ============================================================
+# SeedType - 种子类型定义
+# 键: SeedType 名称, 值: 枚举值 (int)
+# ============================================================
+[SeedType]
+None = -1
+Peashooter = 0
+Sunflower = 1
+CherryBomb = 2
+Wallnut = 3
+PotatoMine = 4
+SnowPea = 5
+Chomper = 6
+Repeater = 7
+Puffshroom = 8
+Sunshroom = 9
+Fumeshroom = 10
+GraveBuster = 11
+Hypnoshroom = 12
+Scaredyshroom = 13
+Iceshroom = 14
+Doomshroom = 15
+LilyPad = 16
+Squash = 17
+Threepeater = 18
+TangleKelp = 19
+Jalapeno = 20
+Spickweed = 21
+Torchwood = 22
+Tallnut = 23
+Seashroom = 24
+Plantern = 25
+Cactus = 26
+Blover = 27
+SplitPea = 28
+Starfruit = 29
+Pumpkin = 30
+Magnetshroom = 31
+Cabbagepult = 32
+FlowerPot = 33
+Kernelpult = 34
+CoffeeBean = 35
+Garlic = 36
+UmbrellaLeaf = 37
+Marigold = 38
+Melonpult = 39
+GatlingPea = 40
+TwinSunflower = 41
+Gloomshroom = 42
+Cattail = 43
+WinterMelon = 44
+GoldMagnet = 45
+Spikerock = 46
+CobCannon = 47
+Imitater = 48
+Explodenut = 49
+GiantWallnut = 50
+Sprout = 51
+LeftRepeater = 52
+SpringEquinoxVineS6 = 76
+DarkShroomS6 = 77
+MangosteenS6 = 78
+ThymeWarpS6 = 79
+
+# ============================================================
+# S1 - 第一赛季数据
+# seed: 对应的 SeedType（字符串）
+# 注：S1 无 role 字段
+# ============================================================
+[S1]
+PeaShooter = { seed = "Peashooter" }
+WallNut = { seed = "Wallnut" }
+PotatoMine = { seed = "PotatoMine" }
+SnowPea = { seed = "SnowPea" }
+Chomper = { seed = "Chomper" }
+Repeater = { seed = "Repeater" }
+PuffShroom = { seed = "Puffshroom" }
+FumeShroom = { seed = "Fumeshroom" }
+HypnoShroom = { seed = "Hypnoshroom" }
+ScaredyShroom = { seed = "Scaredyshroom" }
+IceShroom = { seed = "Iceshroom" }
+LilyPad = { seed = "LilyPad" }
+Squash = { seed = "Squash" }
+Threepeater = { seed = "Threepeater" }
+Torchwood = { seed = "Torchwood" }
+TallNut = { seed = "Tallnut" }
+SeaShroom = { seed = "Seashroom" }
+Cactus = { seed = "Cactus" }
+SplitPea = { seed = "SplitPea" }
+Starfruit = { seed = "Starfruit" }
+Pumpkin = { seed = "Pumpkin" }
+MagnetShroom = { seed = "Magnetshroom" }
+CabbagePult = { seed = "Cabbagepult" }
+FlowerPot = { seed = "FlowerPot" }
+KernelPult = { seed = "Kernelpult" }
+Garlic = { seed = "Garlic" }
+UmbrellaLeaf = { seed = "UmbrellaLeaf" }
+MelonPult = { seed = "Melonpult" }
+GatlingPea = { seed = "GatlingPea" }
+GloomShroom = { seed = "Gloomshroom" }
+Cattail = { seed = "Cattail" }
+WinterMelon = { seed = "WinterMelon" }
+SpikeRock = { seed = "Spikerock" }
+Explode_O_Nut = { seed = "Explodenut" }
+Barley = { seed = "Sunflower" }
+
+# ============================================================
+# S6 - 第六赛季数据
+# seed: 对应的 SeedType（字符串）
+# role: 对应的 RoleType（字符串）
+# ============================================================
+[S6]
+WallNut = { seed = "Wallnut", role = "Durable" }
+PotatoMine = { seed = "PotatoMine", role = "CarryTypeA" }
+SnowPea = { seed = "SnowPea", role = "Disabler" }
+Chomper = { seed = "Chomper", role = "Durable" }
+Repeater = { seed = "Repeater", role = "CarryTypeB" }
+PuffShroom = { seed = "Puffshroom", role = "CarryTypeB" }
+SunShroom = { seed = "Sunshroom", role = "CarryTypeA" }
+FumeShroom = { seed = "Fumeshroom", role = "CarryTypeA" }
+HypnoShroom = { seed = "Hypnoshroom", role = "Resistance" }
+ScaredyShroom = { seed = "Scaredyshroom", role = "CarryTypeB" }
+IceShroom = { seed = "Iceshroom", role = "Support" }
+Squash = { seed = "Squash", role = "CarryTypeB" }
+Threepeater = { seed = "Threepeater", role = "CarryTypeB" }
+TangleKelp = { seed = "TangleKelp", role = "Disabler" }
+Torchwood = { seed = "Torchwood", role = "Support" }
+TallNut = { seed = "Tallnut", role = "Durable" }
+SeaShroom = { seed = "Seashroom", role = "CarryTypeB" }
+Plantern = { seed = "Plantern", role = "Support" }
+Cactus = { seed = "Cactus", role = "Durable" }
+Blover = { seed = "Blover", role = "Support" }
+SplitPea = { seed = "SplitPea", role = "CarryTypeB" }
+Starfruit = { seed = "Starfruit", role = "CarryTypeB" }
+MagnetShroom = { seed = "Magnetshroom", role = "Resistance" }
+CabbagePult = { seed = "Cabbagepult", role = "CarryTypeB" }
+KernelPult = { seed = "Kernelpult", role = "Disabler" }
+Garlic = { seed = "Garlic", role = "Durable" }
+UmbrellaLeaf = { seed = "UmbrellaLeaf", role = "Resistance" }
+Marigold = { seed = "Marigold", role = "Support" }
+MelonPult = { seed = "Melonpult", role = "CarryTypeA" }
+GatlingPea = { seed = "GatlingPea", role = "CarryTypeA" }
+GloomShroom = { seed = "Gloomshroom", role = "CarryTypeA" }
+Cattail = { seed = "Cattail", role = "CarryTypeB" }
+WinterMelon = { seed = "WinterMelon", role = "Disabler" }
+GoldMagnet = { seed = "GoldMagnet", role = "Support" }
+SpikeRock = { seed = "Spikerock", role = "Durable" }
+Explode_O_Nut = { seed = "Explodenut", role = "Durable" }
+Endoflame = { seed = "Sprout", role = "CarryTypeB" }
+LeftRepeater = { seed = "LeftRepeater", role = "CarryTypeB" }
+Barley = { seed = "Sunflower", role = "None" }
+SniperShooter = { seed = "Peashooter", role = "Resistance" }
+DiamondShroom = { seed = "LilyPad", role = "CarryTypeB" }
+SpringEquinoxVine = { seed = "SpringEquinoxVineS6", role = "Support" }
+DarkShroom = { seed = "DarkShroomS6", role = "CarryTypeB" }
+Mangosteen = { seed = "MangosteenS6", role = "CarryTypeB" }
+ThymeWarp = { seed = "ThymeWarpS6", role = "Resistance" }
