@@ -7,38 +7,59 @@ namespace BarleyCommon::S1
 {
 	constexpr array<SeedType, static_cast<size_t>(CardCode::Last)> SeedTypeMap =
 	{
-		SeedType::Peashooter,	SeedType::None,			SeedType::Wallnut,		SeedType::PotatoMine,
-								SeedType::SnowPea,		SeedType::Chomper,		SeedType::Repeater,
-
-		SeedType::Puffshroom,	SeedType::None,			SeedType::Fumeshroom,
-		SeedType::Hypnoshroom,	SeedType::Scaredyshroom,SeedType::Iceshroom,
-
-		SeedType::LilyPad,		SeedType::Squash,		SeedType::Threepeater,	SeedType::None,
-														SeedType::Torchwood,	SeedType::Tallnut,
-
-		SeedType::Seashroom,	SeedType::None,			SeedType::Cactus,		SeedType::None,
-		SeedType::SplitPea,		SeedType::Starfruit,	SeedType::Pumpkin,		SeedType::Magnetshroom,
-
-		SeedType::Cabbagepult,	SeedType::FlowerPot,	SeedType::Kernelpult,
-		SeedType::Garlic,		SeedType::UmbrellaLeaf, SeedType::None,			SeedType::Melonpult,
-
-		SeedType::GatlingPea,							SeedType::Gloomshroom,	SeedType::Cattail,
-		SeedType::WinterMelon,	SeedType::None,			SeedType::Spikerock,
-
-		SeedType::Explodenut,	SeedType::None,			SeedType::None,			SeedType::Sunflower,
-
-		SeedType::None,			SeedType::None,			SeedType::None,			SeedType::None,
-		SeedType::None,			SeedType::None
+		SeedType::Peashooter,
+		SeedType::None,
+		SeedType::Wallnut,
+		SeedType::PotatoMine,
+		SeedType::SnowPea,
+		SeedType::Chomper,
+		SeedType::Repeater,
+		SeedType::Puffshroom,
+		SeedType::None,
+		SeedType::Fumeshroom,
+		SeedType::Hypnoshroom,
+		SeedType::Scaredyshroom,
+		SeedType::Iceshroom,
+		SeedType::LilyPad,
+		SeedType::Squash,
+		SeedType::Threepeater,
+		SeedType::None,
+		SeedType::Torchwood,
+		SeedType::Tallnut,
+		SeedType::Seashroom,
+		SeedType::None,
+		SeedType::Cactus,
+		SeedType::None,
+		SeedType::SplitPea,
+		SeedType::Starfruit,
+		SeedType::Pumpkin,
+		SeedType::Magnetshroom,
+		SeedType::Cabbagepult,
+		SeedType::FlowerPot,
+		SeedType::Kernelpult,
+		SeedType::Garlic,
+		SeedType::UmbrellaLeaf,
+		SeedType::None,
+		SeedType::Melonpult,
+		SeedType::GatlingPea,
+		SeedType::Gloomshroom,
+		SeedType::Cattail,
+		SeedType::WinterMelon,
+		SeedType::None,
+		SeedType::Spikerock,
+		SeedType::Explodenut,
+		SeedType::None,
+		SeedType::None,
+		SeedType::Sunflower,
+		SeedType::None,
+		SeedType::None,
+		SeedType::None,
+		SeedType::None,
+		SeedType::None,
+		SeedType::None,
 	};
-	
-	constexpr size_t NotNullCodeCNT = []() constexpr
-	{
-		size_t cnt = 0;
-		for (auto type : SeedTypeMap)
-			if (type != SeedType::None)
-				++cnt;
-		return cnt;
-	}();
+
+	constexpr size_t NotNullCodeCNT = 35;
 }
 
 export namespace BarleyCommon::S1
@@ -80,4 +101,5 @@ export namespace BarleyCommon::S1
 			return std::nullopt;
 		}
 	}
+
 }

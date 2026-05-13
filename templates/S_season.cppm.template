@@ -1,0 +1,56 @@
+export module BarleyCommon:{{ season_name }};
+
+import :Index;
+import :Def;
+
+namespace BarleyCommon::{{ season_name }}
+{
+	constexpr array<SeedType, static_cast<size_t>(CardCode::Last)> SeedTypeMap =
+	{
+{{ seedtype_map_entries }}
+	};
+{{ role_map_block }}
+	constexpr size_t NotNullCodeCNT = {{ valid_count }};
+}
+
+export namespace BarleyCommon::{{ season_name }}
+{
+	constexpr auto ValidCodes = []() constexpr
+	{
+		std::array<CardCode, NotNullCodeCNT> result;
+		size_t idx = 0;
+		for (int i = 0; auto type : SeedTypeMap)
+		{
+			if (type != SeedType::None)
+				result[idx++] = static_cast<CardCode>(i);
+			i++;
+		}
+		return result;
+	}();
+
+	CardCode SeedType2Code(const SeedType &type)
+	{
+		for (int i = 0; i < static_cast<int>(CardCode::Last); i++)
+			if (SeedTypeMap[i] == type)
+				return static_cast<CardCode>(i);
+
+		if (type == SeedType::None)
+			return CardCode::Nil;
+		return CardCode::Unknown;
+	}
+
+	optional<SeedType> getType(const CardCode code)
+	{
+		if (code >= static_cast<CardCode>(0) && code < CardCode::Last)
+			return SeedTypeMap[static_cast<int>(code)];
+
+		switch (code)
+		{
+		case CardCode::Nil:
+			return SeedType::None;
+		default:
+			return std::nullopt;
+		}
+	}
+{{ get_role_function }}
+}

@@ -1,0 +1,88 @@
+export module BarleyCommon:Def;
+
+import :Index;
+
+export namespace BarleyCommon
+{
+	/// @enum CardCode
+	/// @brief 卡片编码定义
+	enum class CardCode : int
+	{
+{{ cardcode_entries }}
+		// 特殊编码
+		Nil = -1,        // 空位 表示该赛季不存在该植物
+		Unknown = -2       // 未知 表示可能输入错误
+	};
+
+	enum class RoleType : uint8_t
+	{
+{{ roletype_entries }}
+	};
+}
+
+namespace BarleyCommon
+{
+	enum class SeedType : int
+	{
+{{ seedtype_entries }}
+	};
+
+	constexpr auto genCodeMap = []()
+	{
+		array<string_view, static_cast<size_t>(CardCode::Last)> map =
+		{
+{{ codemap_entries }}
+		};
+
+		return map;
+	};
+	constexpr auto CodeMap = genCodeMap();
+	constexpr array<string_view, static_cast<size_t>(CardCode::Last)> CodeNameMap =
+	{
+{{ codenamemap_entries }}
+	};
+}
+
+export namespace BarleyCommon
+{
+	string_view toShortName(const CardCode code)
+	{
+		if (code >= static_cast<CardCode>(0) && code < CardCode::Last)
+			return CodeMap[static_cast<int>(code)];
+
+		switch (code)
+		{
+		case CardCode::Nil:
+			return "空";
+		default:
+			return "Invalid";
+		}
+	}
+
+	CardCode ShortName2Code(const string_view& view)
+	{
+		for (int i = 0; i < static_cast<int>(CardCode::Last); i++)
+			if (CodeMap[i].compare(view) == 0)
+				return static_cast<CardCode>(i);
+
+		if (view.compare("空") == 0)
+			return CardCode::Nil;
+		if (view.compare("仙") == 0)
+			return CardCode::Cactus;
+		return CardCode::Unknown;
+	}
+
+	string_view getName(const CardCode code)
+	{
+		if (code >= static_cast<CardCode>(0) && code < CardCode::Last)
+			return CodeNameMap[static_cast<int>(code)];
+
+		switch (code)
+		{
+		case CardCode::Nil:
+			return "空";
+		default:
+			return "Invalid";
+		}
+	}
+}

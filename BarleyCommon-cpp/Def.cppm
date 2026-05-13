@@ -32,7 +32,7 @@ export namespace BarleyCommon
 		HypnoShroom,
 		/// @brief 胆小菇
 		ScaredyShroom,
-		/// @brief 寒冰菇
+		/// @brief 冰川菇
 		IceShroom,
 		/// @brief 荷叶
 		LilyPad,
@@ -58,7 +58,7 @@ export namespace BarleyCommon
 		SplitPea,
 		/// @brief 杨桃
 		Starfruit,
-		/// @brief 南瓜头
+		/// @brief 南瓜壳
 		Pumpkin,
 		/// @brief 磁力菇
 		MagnetShroom,
@@ -80,13 +80,13 @@ export namespace BarleyCommon
 		GatlingPea,
 		/// @brief 忧郁菇/忧郁南瓜
 		GloomShroom,
-		/// @brief 香蒲
+		/// @brief 猫尾草
 		Cattail,
 		/// @brief 冰瓜
 		WinterMelon,
 		/// @brief 吸金磁
 		GoldMagnet,
-		/// @brief 钢地刺
+		/// @brief 地刺王
 		SpikeRock,
 		/// @brief 爆炸坚果
 		Explode_O_Nut,
@@ -115,7 +115,7 @@ export namespace BarleyCommon
 		Nil = -1,        // 空位 表示该赛季不存在该植物
 		Unknown = -2       // 未知 表示可能输入错误
 	};
-	
+
 	enum class RoleType : uint8_t
 	{
 		None = 0,
@@ -130,7 +130,7 @@ export namespace BarleyCommon
 		/// @brief 前排
 		Durable,
 		/// @brief 抗性
-		Resistance
+		Resistance,
 	};
 }
 
@@ -139,93 +139,92 @@ namespace BarleyCommon
 	enum class SeedType : int
 	{
 		None = -1,
-		Peashooter,
-		Sunflower,
-		CherryBomb,
-		Wallnut,
-		PotatoMine,
-		SnowPea,
-		Chomper,
-		Repeater,
-		Puffshroom,
-		Sunshroom,
-		Fumeshroom,
-		GraveBuster,
-		Hypnoshroom,
-		Scaredyshroom,
-		Iceshroom,
-		Doomshroom,
-		LilyPad,
-		Squash,
-		Threepeater,
-		TangleKelp,
-		Jalapeno,
-		Spickweed,
-		Torchwood,
-		Tallnut,
-		Seashroom,
-		Plantern,
-		Cactus,
-		Blover,
-		SplitPea,
-		Starfruit,
-		Pumpkin,
-		Magnetshroom,
-		Cabbagepult,
-		FlowerPot,
-		Kernelpult,
-		CoffeeBean,
-		Garlic,
-		UmbrellaLeaf,
-		Marigold,
-		Melonpult,
-		GatlingPea,
-		TwinSunflower,
-		Gloomshroom,
-		Cattail,
-		WinterMelon,
-		GoldMagnet,
-		Spikerock,
-		CobCannon,
-		Imitater,
-		Explodenut,
-		GiantWallnut,
-		Sprout,
-		LeftRepeater,
-
-		SpringEquinoxVineS6 = 0x4C,
-		DarkShroomS6 = 0x4D,
-		MangosteenS6 = 0x4E,
-		ThymeWarpS6 = 0x4F
+		Peashooter = 0,
+		Sunflower = 1,
+		CherryBomb = 2,
+		Wallnut = 3,
+		PotatoMine = 4,
+		SnowPea = 5,
+		Chomper = 6,
+		Repeater = 7,
+		Puffshroom = 8,
+		Sunshroom = 9,
+		Fumeshroom = 10,
+		GraveBuster = 11,
+		Hypnoshroom = 12,
+		Scaredyshroom = 13,
+		Iceshroom = 14,
+		Doomshroom = 15,
+		LilyPad = 16,
+		Squash = 17,
+		Threepeater = 18,
+		TangleKelp = 19,
+		Jalapeno = 20,
+		Spickweed = 21,
+		Torchwood = 22,
+		Tallnut = 23,
+		Seashroom = 24,
+		Plantern = 25,
+		Cactus = 26,
+		Blover = 27,
+		SplitPea = 28,
+		Starfruit = 29,
+		Pumpkin = 30,
+		Magnetshroom = 31,
+		Cabbagepult = 32,
+		FlowerPot = 33,
+		Kernelpult = 34,
+		CoffeeBean = 35,
+		Garlic = 36,
+		UmbrellaLeaf = 37,
+		Marigold = 38,
+		Melonpult = 39,
+		GatlingPea = 40,
+		TwinSunflower = 41,
+		Gloomshroom = 42,
+		Cattail = 43,
+		WinterMelon = 44,
+		GoldMagnet = 45,
+		Spikerock = 46,
+		CobCannon = 47,
+		Imitater = 48,
+		Explodenut = 49,
+		GiantWallnut = 50,
+		Sprout = 51,
+		LeftRepeater = 52,
+		SpringEquinoxVineS6 = 76,
+		DarkShroomS6 = 77,
+		MangosteenS6 = 78,
+		ThymeWarpS6 = 79,
 	};
 
 	constexpr auto genCodeMap = []()
 	{
 		array<string_view, static_cast<size_t>(CardCode::Last)> map =
 		{
-			"豌", "葵", "坚", "雷", "寒", "嘴", "双",
-			"小", "阳", "喷", "魅", "胆", "川",
-			"莲", "窝", "三", "缠", "火", "高",
-			"海", "灯", "掌", "叶", "裂", "星", "南", "磁",
-			"卷", "盆", "玉", "蒜", "伞", "金", "瓜",
-			"机", "曾", "猫", "冰", "吸", "刺",
-			"爆", "飘", "反", "麦",
-			"狙", "钻", "藤", "幽", "奶", "逆"
+		"豌", "葵", "坚", "雷", "寒", "嘴", "双",
+		"小", "阳", "喷", "魅", "胆", "川", "莲",
+		"窝", "三", "缠", "火", "高", "海", "灯",
+		"掌", "叶", "裂", "星", "南", "磁", "卷",
+		"盆", "玉", "蒜", "伞", "金", "瓜", "机",
+		"曾", "猫", "冰", "吸", "刺", "爆", "飘",
+		"反", "麦", "狙", "钻", "藤", "幽", "奶",
+		"逆"
 		};
 
 		return map;
 	};
 	constexpr auto CodeMap = genCodeMap();
-	constexpr array<string_view, static_cast<size_t>(CardCode::Last)> CodeNameMap = 
+	constexpr array<string_view, static_cast<size_t>(CardCode::Last)> CodeNameMap =
 	{
 		"豌豆射手", "向日葵", "坚果墙", "土豆雷", "寒冰射手", "大嘴花", "双发射手",
-		"小喷菇", "阳光菇", "大喷菇", "魅惑菇", "胆小菇", "冰川菇",
-		"荷叶", "窝瓜", "三线射手", "缠绕海草", "火炬树桩", "高坚果",
-		"海蘑菇", "路灯花", "仙人掌", "三叶草", "裂荚射手", "杨桃", "南瓜壳", "磁力菇",
-		"卷心菜投手", "花盆", "玉米投手", "大蒜", "叶子保护伞", "金盏花", "西瓜投手",
-		"机枪射手", "忧郁菇", "猫尾草", "冰瓜", "吸金磁", "地刺王",
-		"爆炸坚果", "火红莲", "反向双发", "大麦",
-		"狙击豌豆", "晶钻菇", "春分藤", "幽冥菇", "奶山竹", "逆时草"
+		"小喷菇", "阳光菇", "大喷菇", "魅惑菇", "胆小菇", "冰川菇", "荷叶",
+		"窝瓜", "三线射手", "缠绕海草", "火炬树桩", "高坚果", "海蘑菇", "路灯花",
+		"仙人掌", "三叶草", "裂荚射手", "杨桃", "南瓜壳", "磁力菇", "卷心菜投手",
+		"花盆", "玉米投手", "大蒜", "叶子保护伞", "金盏花", "西瓜投手", "机枪射手",
+		"忧郁菇/忧郁南瓜", "猫尾草", "冰瓜", "吸金磁", "地刺王", "爆炸坚果", "火红莲",
+		"反向双发", "大麦", "狙击豌豆", "晶钻菇", "春分藤", "幽冥菇", "奶山竹",
+		"逆时草"
 	};
 }
 
