@@ -1,0 +1,68 @@
+-- BarleyCommon Lua 库
+-- 由 generate.py 自动生成，请勿手动修改
+
+local BarleyCommon = {}
+
+-- CardCode 卡片编码
+BarleyCommon.CardCode = {
+{{ cardcode_entries }}
+}
+
+-- RoleType 角色类型
+BarleyCommon.RoleType = {
+{{ roletype_entries }}
+}
+
+-- SeedType 种子类型
+BarleyCommon.SeedType = {
+{{ seedtype_entries }}
+}
+
+-- 短名称映射
+BarleyCommon.CodeMap = {
+{{ codemap_entries }}
+}
+
+-- 全名映射
+BarleyCommon.CodeNameMap = {
+{{ codenamemap_entries }}
+}
+
+function BarleyCommon.toShortName(code)
+    if code >= 0 and code < BarleyCommon.CardCode.Last then
+        return BarleyCommon.CodeMap[code + 1]
+    end
+    if code == BarleyCommon.CardCode.Nil then
+        return "空"
+    end
+    return "Invalid"
+end
+
+function BarleyCommon.ShortName2Code(view)
+    for i = 0, BarleyCommon.CardCode.Last - 1 do
+        if BarleyCommon.CodeMap[i + 1] == view then
+            return i
+        end
+    end
+    if view == "空" then
+        return BarleyCommon.CardCode.Nil
+    end
+    if view == "仙" then
+        return BarleyCommon.CardCode.Cactus
+    end
+    return BarleyCommon.CardCode.Unknown
+end
+
+function BarleyCommon.getName(code)
+    if code >= 0 and code < BarleyCommon.CardCode.Last then
+        return BarleyCommon.CodeNameMap[code + 1]
+    end
+    if code == BarleyCommon.CardCode.Nil then
+        return "空"
+    end
+    return "Invalid"
+end
+
+{{ season_modules }}
+
+return BarleyCommon

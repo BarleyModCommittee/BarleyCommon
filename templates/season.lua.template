@@ -1,0 +1,30 @@
+-- {{ season_name }} 赛季数据
+BarleyCommon.{{ season_name }} = {}
+
+BarleyCommon.{{ season_name }}.SeedTypeMap = {
+{{ seedtype_map_entries }}
+}
+{{ role_map_block }}
+
+function BarleyCommon.{{ season_name }}.SeedType2Code(type)
+    for i = 0, #BarleyCommon.{{ season_name }}.SeedTypeMap do
+        if BarleyCommon.{{ season_name }}.SeedTypeMap[i + 1] == type then
+            return i
+        end
+    end
+    if type == BarleyCommon.SeedType.None then
+        return BarleyCommon.CardCode.Nil
+    end
+    return BarleyCommon.CardCode.Unknown
+end
+
+function BarleyCommon.{{ season_name }}.getType(code)
+    if code >= 0 and code < BarleyCommon.CardCode.Last then
+        return BarleyCommon.{{ season_name }}.SeedTypeMap[code + 1]
+    end
+    if code == BarleyCommon.CardCode.Nil then
+        return BarleyCommon.SeedType.None
+    end
+    return nil
+end
+{{ get_role_function }}
