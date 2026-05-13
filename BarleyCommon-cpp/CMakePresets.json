@@ -1,0 +1,14 @@
+{
+	"configurePresets": [
+		{
+			"name": "x64-Debug",
+			"architeture": {
+				"value": "x64",
+				"strategy": "set"
+			}
+			"cacheVariables": {
+				"CMAKE_BUILD_TYPE": "Debug"
+			}
+		}
+	]
+}
