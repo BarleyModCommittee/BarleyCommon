@@ -177,6 +177,13 @@ def generate_cpp(output_dir: Path, templates_dir: Path, config: dict[str, Any]) 
     seasons_config = config["Seasons"]
     active_seasons = config.get("_active_seasons", list(seasons_config.keys()))
 
+    # 清理旧的赛季文件
+    for old_file in output_dir.glob("S*.cppm"):
+        old_name = old_file.stem
+        if old_name not in active_seasons:
+            old_file.unlink()
+            print(f"  Removed stale {old_name}.cppm")
+
     # 生成 Index.cppm
     index_template = templates_dir / "Index.cppm.template"
     index_content = render_template(index_template, {})
