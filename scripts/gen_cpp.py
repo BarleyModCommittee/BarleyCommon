@@ -115,7 +115,8 @@ def generate_seedtype_map(season_data: dict[str, Any], cardcode: dict[str, Any])
 
     lines = []
     for name, data in cardcode_sorted:
-        seed = season_data.get(name, {}).get("seed", "None")
+        entry = season_data.get(name)
+        seed = entry.get("seed", "None") if isinstance(entry, dict) else "None"
         lines.append(f"\t\tSeedType::{seed},")
 
     return "\n".join(lines)
@@ -130,7 +131,8 @@ def generate_role_map(season_data: dict[str, Any], cardcode: dict[str, Any]) -> 
 
     lines = []
     for name, data in cardcode_sorted:
-        role = season_data.get(name, {}).get("role", "None")
+        entry = season_data.get(name)
+        role = entry.get("role", "None") if isinstance(entry, dict) else "None"
         lines.append(f"\t\tRoleType::{role},")
 
     block = """
@@ -143,7 +145,7 @@ def generate_role_map(season_data: dict[str, Any], cardcode: dict[str, Any]) -> 
 
 def count_valid_codes(season_data: dict[str, Any]) -> int:
     """计算赛季中有效卡片数量"""
-    return sum(1 for v in season_data.values() if v.get("seed") != "None")
+    return sum(1 for v in season_data.values() if isinstance(v, dict) and v.get("seed") != "None")
 
 
 def generate_get_role_function(season_name: str, has_role: bool) -> str:
@@ -172,6 +174,8 @@ def generate_cpp(output_dir: Path, templates_dir: Path, config: dict[str, Any]) 
     cardcode = config["CardCode"]
     roletype = config["RoleType"]
     seedtype = config["SeedType"]
+    seasons_config = config["Seasons"]
+    active_seasons = config.get("_active_seasons", list(seasons_config.keys()))
 
     # 生成 Index.cppm
     index_template = templates_dir / "Index.cppm.template"
@@ -194,11 +198,11 @@ def generate_cpp(output_dir: Path, templates_dir: Path, config: dict[str, Any]) 
 
     # 生成赛季文件
     season_template = templates_dir / "S_season.cppm.template"
-    for season_name in ["S1", "S6"]:
-        if season_name not in config:
+    for season_name in active_seasons:
+        if season_name not in seasons_config:
             continue
 
-        season_data = config[season_name]
+        season_data = seasons_config[season_name]
         has_role = any("role" in v for v in season_data.values() if isinstance(v, dict))
 
         season_replacements = {

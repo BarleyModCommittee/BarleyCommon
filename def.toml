@@ -348,11 +348,13 @@ MangosteenS6 = 78
 ThymeWarpS6 = 79
 
 # ============================================================
-# S1 - 第一赛季数据
+# Seasons - 赛季数据定义
 # seed: 对应的 SeedType（字符串）
+# role: 对应的 RoleType（字符串，可选）
 # 注：S1 无 role 字段
 # ============================================================
-[S1]
+[Seasons.S1]
+active = true
 PeaShooter = { seed = "Peashooter" }
 WallNut = { seed = "Wallnut" }
 PotatoMine = { seed = "PotatoMine" }
@@ -391,10 +393,9 @@ Barley = { seed = "Sunflower" }
 
 # ============================================================
 # S6 - 第六赛季数据
-# seed: 对应的 SeedType（字符串）
-# role: 对应的 RoleType（字符串）
 # ============================================================
-[S6]
+[Seasons.S6]
+active = true
 WallNut = { seed = "Wallnut", role = "Durable" }
 PotatoMine = { seed = "PotatoMine", role = "CarryTypeA" }
 SnowPea = { seed = "SnowPea", role = "Disabler" }

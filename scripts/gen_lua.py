@@ -111,7 +111,8 @@ def generate_lua_seedtype_map(season_data: dict[str, Any], cardcode: dict[str, A
 
     lines = []
     for name, data in cardcode_sorted:
-        seed = season_data.get(name, {}).get("seed", "None")
+        entry = season_data.get(name)
+        seed = entry.get("seed", "None") if isinstance(entry, dict) else "None"
         lines.append(f"\tBarleyCommon.SeedType.{seed},")
 
     return "\n".join(lines)
@@ -126,7 +127,8 @@ def generate_lua_role_map(season_name: str, season_data: dict[str, Any], cardcod
 
     lines = []
     for name, data in cardcode_sorted:
-        role = season_data.get(name, {}).get("role", "None")
+        entry = season_data.get(name)
+        role = entry.get("role", "None") if isinstance(entry, dict) else "None"
         lines.append(f"\tBarleyCommon.RoleType.{role},")
 
     block = f"\nBarleyCommon.{season_name}.RoleTypeMap = {{\n" + "\n".join(lines) + "\n}"
@@ -155,15 +157,17 @@ def generate_lua(output_dir: Path, templates_dir: Path, config: dict[str, Any]) 
     cardcode = config["CardCode"]
     roletype = config["RoleType"]
     seedtype = config["SeedType"]
+    seasons_config = config["Seasons"]
+    active_seasons = config.get("_active_seasons", list(seasons_config.keys()))
 
     # 生成赛季模块内容
     season_template = templates_dir / "season.lua.template"
     season_modules = []
-    for season_name in ["S1", "S6"]:
-        if season_name not in config:
+    for season_name in active_seasons:
+        if season_name not in seasons_config:
             continue
 
-        season_data = config[season_name]
+        season_data = seasons_config[season_name]
         has_role = any("role" in v for v in season_data.values() if isinstance(v, dict))
 
         season_replacements = {
