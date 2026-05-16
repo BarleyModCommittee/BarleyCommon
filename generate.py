@@ -28,6 +28,11 @@ def get_active_seasons(config: dict, override: str | None) -> list[str]:
 def main():
     parser = argparse.ArgumentParser(description="BarleyCommon 代码生成脚本")
     parser.add_argument(
+        "--config",
+        default=None,
+        help="指定配置文件路径 (默认: def.toml)",
+    )
+    parser.add_argument(
         "--lang",
         choices=["cpp", "lua", "all"],
         default="all",
@@ -41,7 +46,7 @@ def main():
     args = parser.parse_args()
 
     root_dir = Path(__file__).parent
-    config_path = root_dir / "def.toml"
+    config_path = Path(args.config) if args.config else root_dir / "def.toml"
     templates_dir = root_dir / "templates"
 
     if not config_path.exists():
