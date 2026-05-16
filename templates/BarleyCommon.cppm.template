@@ -1,0 +1,4 @@
+export module BarleyCommon;
+
+export import :Def;
+{{ season_imports }}

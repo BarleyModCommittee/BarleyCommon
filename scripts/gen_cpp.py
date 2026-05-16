@@ -203,6 +203,16 @@ def generate_cpp(output_dir: Path, templates_dir: Path, config: dict[str, Any]) 
     (output_dir / "Def.cppm").write_text(def_content, encoding="utf-8")
     print(f"  Generated Def.cppm")
 
+    # 生成 BarleyCommon.cppm
+    barley_template = templates_dir / "BarleyCommon.cppm.template"
+    season_imports = "\n".join(f"export import :{s};" for s in active_seasons if s in seasons_config)
+    barley_replacements = {
+        "season_imports": season_imports,
+    }
+    barley_content = render_template(barley_template, barley_replacements)
+    (output_dir / "BarleyCommon.cppm").write_text(barley_content, encoding="utf-8")
+    print(f"  Generated BarleyCommon.cppm")
+
     # 生成赛季文件
     season_template = templates_dir / "S_season.cppm.template"
     for season_name in active_seasons:
