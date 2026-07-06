@@ -6,7 +6,7 @@ local BarleyCommon = {}
 -- CardCode 卡片编码
 BarleyCommon.CardCode = {
 	PeaShooter = 0,	-- 豌豆射手
-	SunFlower = 1,	-- 向日葵
+	Sunflower = 1,	-- 向日葵
 	WallNut = 2,	-- 坚果墙
 	PotatoMine = 3,	-- 土豆雷
 	SnowPea = 4,	-- 寒冰射手

@@ -14,7 +14,7 @@ value = 0
 short = "豌"
 alias = "豌豆射手"
 
-[CardCode.SunFlower]
+[CardCode.Sunflower]
 value = 1
 short = "葵"
 alias = "向日葵"

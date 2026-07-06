@@ -1,0 +1,37 @@
+name: GenerateCheck
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+  push:
+    branches: [ "Primary" ]
+
+jobs:
+  generate-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run generate script
+        run: python generate.py
+
+      - name: Check for changes
+        run: |
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes detected after generation."
+          else
+            echo "Changes detected after generation. Please regenerate files locally and commit."
+            git diff --cached --stat
+            exit 1
+          fi

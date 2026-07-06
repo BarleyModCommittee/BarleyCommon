@@ -11,7 +11,7 @@ export namespace BarleyCommon
 		/// @brief 豌豆射手
 		PeaShooter,
 		/// @brief 向日葵
-		SunFlower,
+		Sunflower,
 		/// @brief 坚果墙
 		WallNut,
 		/// @brief 土豆雷
