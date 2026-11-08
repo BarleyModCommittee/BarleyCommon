@@ -25,7 +25,7 @@ BarleyCommon/
 - **CardCode** - 卡片编码（value / short / alias）
 - **RoleType** - 角色类型（value / name）
 - **SeedType** - 种子类型（value）
-- **S1** / **S6** - 赛季数据（seed / role 可选键）
+- **S1** / **S6** / **S7** - 赛季数据（seed / role 可选键）
 
 ## 使用方法
 
