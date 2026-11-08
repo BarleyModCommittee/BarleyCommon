@@ -7,6 +7,7 @@
 ```
 BarleyCommon/
 ├── def.toml              # 配置文件
+├── pyproject.toml        # Python 项目配置
 ├── generate.py           # 代码生成入口
 ├── scripts/              # 生成器模块
 │   ├── shared.py         # 共享工具函数
@@ -44,6 +45,15 @@ python generate.py --lang lua
 ### 环境要求
 
 - Python >= 3.11
+- 仅使用标准库，无需安装第三方依赖
+
+在项目目录中初始化虚拟环境：
+
+```bash
+python -m venv .venv
+```
+
+激活虚拟环境后运行生成脚本；Windows PowerShell 使用 `.\.venv\Scripts\Activate.ps1`，macOS/Linux 使用 `source .venv/bin/activate`。
 
 ## 修改数据
 
