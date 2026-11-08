@@ -342,6 +342,8 @@ Explodenut = 49
 GiantWallnut = 50
 Sprout = 51
 LeftRepeater = 52
+DarkShroom = 55
+ThymeWarp = 57
 SpringEquinoxVineS6 = 76
 DarkShroomS6 = 77
 MangosteenS6 = 78
@@ -441,3 +443,52 @@ SpringEquinoxVine = { seed = "SpringEquinoxVineS6", role = "Support" }
 DarkShroom = { seed = "DarkShroomS6", role = "CarryTypeB" }
 Mangosteen = { seed = "MangosteenS6", role = "CarryTypeB" }
 ThymeWarp = { seed = "ThymeWarpS6", role = "Resistance" }
+
+# ============================================================
+# S7 - 第七赛季数据
+# ============================================================
+[Seasons.S7]
+active = true
+Sunflower = { seed = "Sunflower", role = "Support" }
+WallNut = { seed = "Wallnut", role = "Durable" }
+PotatoMine = { seed = "PotatoMine", role = "CarryTypeA" }
+SnowPea = { seed = "SnowPea", role = "CarryTypeB" }
+Chomper = { seed = "Chomper", role = "Durable" }
+Repeater = { seed = "Repeater", role = "CarryTypeB" }
+PuffShroom = { seed = "Puffshroom", role = "CarryTypeB" }
+SunShroom = { seed = "Sunshroom", role = "CarryTypeB" }
+FumeShroom = { seed = "Fumeshroom", role = "CarryTypeA" }
+HypnoShroom = { seed = "Hypnoshroom", role = "Resistance" }
+ScaredyShroom = { seed = "Scaredyshroom", role = "CarryTypeB" }
+IceShroom = { seed = "Iceshroom", role = "Disabler" }
+Squash = { seed = "Squash", role = "CarryTypeB" }
+Threepeater = { seed = "Threepeater", role = "CarryTypeB" }
+TangleKelp = { seed = "TangleKelp", role = "Disabler" }
+Torchwood = { seed = "Torchwood", role = "Support" }
+TallNut = { seed = "Tallnut", role = "Durable" }
+SeaShroom = { seed = "Seashroom", role = "CarryTypeB" }
+Plantern = { seed = "Plantern", role = "Support" }
+Cactus = { seed = "Cactus", role = "Durable" }
+Blover = { seed = "Blover", role = "Support" }
+SplitPea = { seed = "SplitPea", role = "CarryTypeB" }
+Starfruit = { seed = "Starfruit", role = "CarryTypeA" }
+MagnetShroom = { seed = "Magnetshroom", role = "Resistance" }
+CabbagePult = { seed = "Cabbagepult", role = "CarryTypeB" }
+KernelPult = { seed = "Kernelpult", role = "Disabler" }
+Garlic = { seed = "Garlic", role = "Durable" }
+UmbrellaLeaf = { seed = "UmbrellaLeaf", role = "Resistance" }
+Marigold = { seed = "Marigold", role = "Support" }
+MelonPult = { seed = "Melonpult", role = "CarryTypeA" }
+GatlingPea = { seed = "GatlingPea", role = "CarryTypeA" }
+GloomShroom = { seed = "Gloomshroom", role = "CarryTypeA" }
+Cattail = { seed = "Cattail", role = "CarryTypeB" }
+WinterMelon = { seed = "WinterMelon", role = "CarryTypeA" }
+GoldMagnet = { seed = "GoldMagnet", role = "Support" }
+SpikeRock = { seed = "Spikerock", role = "Durable" }
+Explode_O_Nut = { seed = "Explodenut", role = "Durable" }
+Endoflame = { seed = "Sprout", role = "CarryTypeB" }
+LeftRepeater = { seed = "LeftRepeater", role = "CarryTypeB" }
+Barley = { seed = "GiantWallnut", role = "None" }
+SniperShooter = { seed = "Peashooter", role = "Resistance" }
+DarkShroom = { seed = "DarkShroom", role = "CarryTypeB" }
+ThymeWarp = { seed = "ThymeWarp", role = "Resistance" }
