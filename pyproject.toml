@@ -1,0 +1,6 @@
+[project]
+name = "barleycommon"
+version = "0.1.0"
+description = "BarleyCommon code generators"
+requires-python = ">=3.11"
+dependencies = []

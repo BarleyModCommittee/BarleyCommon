@@ -192,6 +192,8 @@ namespace BarleyCommon
 		GiantWallnut = 50,
 		Sprout = 51,
 		LeftRepeater = 52,
+		DarkShroom = 55,
+		ThymeWarp = 57,
 		SpringEquinoxVineS6 = 76,
 		DarkShroomS6 = 77,
 		MangosteenS6 = 78,

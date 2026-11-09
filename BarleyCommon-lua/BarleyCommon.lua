@@ -128,6 +128,8 @@ BarleyCommon.SeedType = {
 	GiantWallnut = 50,
 	Sprout = 51,
 	LeftRepeater = 52,
+	DarkShroom = 55,
+	ThymeWarp = 57,
 	SpringEquinoxVineS6 = 76,
 	DarkShroomS6 = 77,
 	MangosteenS6 = 78,
@@ -407,6 +409,147 @@ end
 function BarleyCommon.S6.getRole(code)
     if code >= 0 and code < BarleyCommon.CardCode.Last then
         return BarleyCommon.S6.RoleTypeMap[code + 1]
+    end
+    if code == BarleyCommon.CardCode.Nil then
+        return BarleyCommon.RoleType.None
+    end
+    return nil
+end
+
+-- S7 赛季数据
+BarleyCommon.S7 = {}
+
+BarleyCommon.S7.SeedTypeMap = {
+	BarleyCommon.SeedType.None,
+	BarleyCommon.SeedType.Sunflower,
+	BarleyCommon.SeedType.Wallnut,
+	BarleyCommon.SeedType.PotatoMine,
+	BarleyCommon.SeedType.SnowPea,
+	BarleyCommon.SeedType.Chomper,
+	BarleyCommon.SeedType.Repeater,
+	BarleyCommon.SeedType.Puffshroom,
+	BarleyCommon.SeedType.Sunshroom,
+	BarleyCommon.SeedType.Fumeshroom,
+	BarleyCommon.SeedType.Hypnoshroom,
+	BarleyCommon.SeedType.Scaredyshroom,
+	BarleyCommon.SeedType.Iceshroom,
+	BarleyCommon.SeedType.None,
+	BarleyCommon.SeedType.Squash,
+	BarleyCommon.SeedType.Threepeater,
+	BarleyCommon.SeedType.TangleKelp,
+	BarleyCommon.SeedType.Torchwood,
+	BarleyCommon.SeedType.Tallnut,
+	BarleyCommon.SeedType.Seashroom,
+	BarleyCommon.SeedType.Plantern,
+	BarleyCommon.SeedType.Cactus,
+	BarleyCommon.SeedType.Blover,
+	BarleyCommon.SeedType.SplitPea,
+	BarleyCommon.SeedType.Starfruit,
+	BarleyCommon.SeedType.None,
+	BarleyCommon.SeedType.Magnetshroom,
+	BarleyCommon.SeedType.Cabbagepult,
+	BarleyCommon.SeedType.None,
+	BarleyCommon.SeedType.Kernelpult,
+	BarleyCommon.SeedType.Garlic,
+	BarleyCommon.SeedType.UmbrellaLeaf,
+	BarleyCommon.SeedType.Marigold,
+	BarleyCommon.SeedType.Melonpult,
+	BarleyCommon.SeedType.GatlingPea,
+	BarleyCommon.SeedType.Gloomshroom,
+	BarleyCommon.SeedType.Cattail,
+	BarleyCommon.SeedType.WinterMelon,
+	BarleyCommon.SeedType.GoldMagnet,
+	BarleyCommon.SeedType.Spikerock,
+	BarleyCommon.SeedType.Explodenut,
+	BarleyCommon.SeedType.Sprout,
+	BarleyCommon.SeedType.LeftRepeater,
+	BarleyCommon.SeedType.GiantWallnut,
+	BarleyCommon.SeedType.Peashooter,
+	BarleyCommon.SeedType.None,
+	BarleyCommon.SeedType.None,
+	BarleyCommon.SeedType.DarkShroom,
+	BarleyCommon.SeedType.None,
+	BarleyCommon.SeedType.ThymeWarp,
+}
+
+BarleyCommon.S7.RoleTypeMap = {
+	BarleyCommon.RoleType.None,
+	BarleyCommon.RoleType.Support,
+	BarleyCommon.RoleType.Durable,
+	BarleyCommon.RoleType.CarryTypeA,
+	BarleyCommon.RoleType.CarryTypeB,
+	BarleyCommon.RoleType.Durable,
+	BarleyCommon.RoleType.CarryTypeB,
+	BarleyCommon.RoleType.CarryTypeB,
+	BarleyCommon.RoleType.CarryTypeB,
+	BarleyCommon.RoleType.CarryTypeA,
+	BarleyCommon.RoleType.Resistance,
+	BarleyCommon.RoleType.CarryTypeB,
+	BarleyCommon.RoleType.Disabler,
+	BarleyCommon.RoleType.None,
+	BarleyCommon.RoleType.CarryTypeB,
+	BarleyCommon.RoleType.CarryTypeB,
+	BarleyCommon.RoleType.Disabler,
+	BarleyCommon.RoleType.Support,
+	BarleyCommon.RoleType.Durable,
+	BarleyCommon.RoleType.CarryTypeB,
+	BarleyCommon.RoleType.Support,
+	BarleyCommon.RoleType.Durable,
+	BarleyCommon.RoleType.Support,
+	BarleyCommon.RoleType.CarryTypeB,
+	BarleyCommon.RoleType.CarryTypeA,
+	BarleyCommon.RoleType.None,
+	BarleyCommon.RoleType.Resistance,
+	BarleyCommon.RoleType.CarryTypeB,
+	BarleyCommon.RoleType.None,
+	BarleyCommon.RoleType.Disabler,
+	BarleyCommon.RoleType.Durable,
+	BarleyCommon.RoleType.Resistance,
+	BarleyCommon.RoleType.Support,
+	BarleyCommon.RoleType.CarryTypeA,
+	BarleyCommon.RoleType.CarryTypeA,
+	BarleyCommon.RoleType.CarryTypeA,
+	BarleyCommon.RoleType.CarryTypeB,
+	BarleyCommon.RoleType.CarryTypeA,
+	BarleyCommon.RoleType.Support,
+	BarleyCommon.RoleType.Durable,
+	BarleyCommon.RoleType.Durable,
+	BarleyCommon.RoleType.CarryTypeB,
+	BarleyCommon.RoleType.CarryTypeB,
+	BarleyCommon.RoleType.None,
+	BarleyCommon.RoleType.Resistance,
+	BarleyCommon.RoleType.None,
+	BarleyCommon.RoleType.None,
+	BarleyCommon.RoleType.CarryTypeB,
+	BarleyCommon.RoleType.None,
+	BarleyCommon.RoleType.Resistance,
+}
+
+function BarleyCommon.S7.SeedType2Code(type)
+    for i = 0, #BarleyCommon.S7.SeedTypeMap do
+        if BarleyCommon.S7.SeedTypeMap[i + 1] == type then
+            return i
+        end
+    end
+    if type == BarleyCommon.SeedType.None then
+        return BarleyCommon.CardCode.Nil
+    end
+    return BarleyCommon.CardCode.Unknown
+end
+
+function BarleyCommon.S7.getType(code)
+    if code >= 0 and code < BarleyCommon.CardCode.Last then
+        return BarleyCommon.S7.SeedTypeMap[code + 1]
+    end
+    if code == BarleyCommon.CardCode.Nil then
+        return BarleyCommon.SeedType.None
+    end
+    return nil
+end
+
+function BarleyCommon.S7.getRole(code)
+    if code >= 0 and code < BarleyCommon.CardCode.Last then
+        return BarleyCommon.S7.RoleTypeMap[code + 1]
     end
     if code == BarleyCommon.CardCode.Nil then
         return BarleyCommon.RoleType.None
